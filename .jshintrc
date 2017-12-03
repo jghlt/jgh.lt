@@ -1,0 +1,25 @@
+{
+    "curly": true,
+    "eqeqeq": true,
+    "strict": false,
+    "evil": true,
+    "indent": 4,
+    "undef": true,
+    "white": true,
+    "browser": true,
+    "quotmark": "single",
+    "trailing": true,
+    "globals": {
+        "ga" : true,
+        "jQuery": true,
+        "console": true,
+        "alert": true,
+        "module": true,
+        "_": true,
+        "require": true,
+        "requirejs" : true,
+        "Modernizr": true,
+        "TimelineLite" : true,
+        "process" : true
+    }
+}

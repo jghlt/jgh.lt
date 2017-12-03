@@ -1,0 +1,76 @@
+/*
+------------------------------------------------------------------
+
+    - _colors.scss / common
+    * inspired by http://erskinedesign.com/blog/friendlier-colour-names-sass-maps/
+
+------------------------------------------------------------------*/
+
+
+    // base palette
+    $color-base-white : #FFFFFF;
+    $color-base-black : #242529;
+    $color-base-grey  : #5A5B5E;
+
+
+    // brand
+    $color-brand      : #242529;
+
+
+    // palette helper function
+    @function palette($palette, $tone: 'base') {
+        @return map-get(map-get($palettes, $palette), $tone);
+    }
+
+
+    /*
+    palette
+    usage * color: palette(black);
+    usage * color: palette(black, light);
+    additional tones should be added with the following pattern
+    * x-dark, dark, mid-dark, base, mid-light, light, x-light
+    */
+    $palettes: (
+        black: (
+            base : $color-base-black,
+            light: lighten($color-base-black, 10%),
+            dark : darken($color-base-black, 10%)
+        ),
+        grey: (
+            base : $color-base-grey,
+            light: lighten($color-base-grey, 10%),
+            dark : darken($color-base-grey, 10%)
+        ),
+        white: (
+            base : $color-base-white,
+            light: $color-base-white,
+            dark : $color-base-white
+        ),
+        brand: (
+            base          : $color-brand,
+            white         : $color-base-white,
+            black         : $color-base-black,
+            grey          : lighten($color-base-black, 50%)
+        )
+    );
+
+
+
+    //
+    // backgrounds-color helpers
+    @each $modifier, $value in map-get($palettes, brand) {
+
+        .u-background--#{$modifier}{
+            background-color:$value;
+        }
+    }
+
+
+    //
+    // color helpers
+    @each $modifier, $value in map-get($palettes, brand) {
+
+        .u-color--#{$modifier}{
+            color:$value;
+        }
+    }

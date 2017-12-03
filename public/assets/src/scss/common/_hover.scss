@@ -1,0 +1,69 @@
+/*
+------------------------------------------------------------------
+
+    - _hover.scss / common
+
+------------------------------------------------------------------*/
+
+
+    //
+    // * usage @include hover-state() { @include opacity(0.5); }
+    // * usage @include hover-state(opacity, 250ms, $easeOutCirc) { @include opacity(0.5);}
+    @mixin hover-state ($property:all, $duration:200ms, $easing: $easeOutCirc, $transition:true) {
+
+        .no-touchevents & {
+
+            @if ($transition == false){
+
+                &:hover{
+                    @content;
+                }
+
+            } @else {
+
+                @include transition($property, $duration, $easing);
+
+                @if ($property != 'all'){
+
+                    @include transition-will-change($property);
+
+                } @else {
+
+                    @include transition-will-change();
+                }
+
+                &:hover{
+                    @content;
+                }
+
+            }
+        }
+    }
+
+
+    //
+    // * usage @include hover-basic;
+    @mixin hover-basic {
+
+        .no-touchevents & {
+            @include transition(opacity, 200ms, $easeOutCirc);
+            will-change:opacity;
+
+            &:hover{
+                opacity: .65;
+            }
+        }
+    }
+
+
+    //
+    // * usage @include hover-basic-underline;
+    @mixin hover-basic-underline {
+
+        .no-touchevents & {
+
+            &:hover{
+                text-decoration:underline;
+            }
+        }
+    }

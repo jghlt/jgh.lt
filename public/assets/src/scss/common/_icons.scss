@@ -1,0 +1,43 @@
+/*
+------------------------------------------------------------------
+
+    - _icons.scss / common
+
+------------------------------------------------------------------*/
+
+    //
+    // ('social--twitter', 36px, 36px),
+    // ('social--twitter--white', 36px, 36px)
+    // * .icon__background--{modifier}, (icon, width, height)
+    $modifiers: (
+    );
+
+
+    //
+    // *
+    $module: '.o-icon';
+    #{$module}{
+        width:100%;
+
+        &__background{
+            @include background-single;
+            display:block;
+            width:100%;
+
+            @each $icon in $modifiers {
+
+                &--#{nth($icon,1)} {
+                    @include background-image(icon--#{nth($icon,1)});
+                    padding-bottom:(nth($icon,2) / nth($icon,3)) * 100%;
+                }
+            }
+        }
+
+        &--hide-image{
+            @include hide-image();
+        }
+
+        &--hide-text{
+            @include hide-text();
+        }
+    }

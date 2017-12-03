@@ -1,0 +1,58 @@
+{
+  "name": "jghlt",
+  "version": "0.0.1",
+  "author": "jghlt",
+  "private": true,
+  "description": "internet",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.3.6",
+    "babel": "^6.5.2",
+    "babel-preset-es2015": "^6.14.0",
+    "babelify": "^7.3.0",
+    "blazy": "^1.6.2",
+    "browser-sync": "^2.18.2",
+    "browserify": "^13.0.0",
+    "browserify-shim": "^3.8.12",
+    "cssnano": "^3.7.0",
+    "del": "^2.2.1",
+    "dploy": "^1.2.0",
+    "event-stream": "^3.3.4",
+    "git-rev-sync": "^1.6.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "*",
+    "gulp-concat": "^2.6.1",
+    "gulp-copy": "*",
+    "gulp-imagemin": "*",
+    "gulp-modernizr": "*",
+    "gulp-notify": "*",
+    "gulp-postcss": "*",
+    "gulp-replace": "*",
+    "gulp-sass": "*",
+    "gulp-sequence": "^0.4.6",
+    "gulp-uglify": "*",
+    "jquery": "^2.2.0",
+    "merge-stream": "^1.0.0",
+    "node.normalize.scss": "^3.0.3",
+    "nodemon": "^1.9.2",
+    "pubsub-js": "^1.5.3",
+    "slick-carousel": "1.5.8",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browserify-shim": {
+    "google": "global:google",
+    "jquery": "$"
+  },
+  "browser": {
+    "jquery": "./node_modules/jquery/dist/jquery.js"
+  }
+}

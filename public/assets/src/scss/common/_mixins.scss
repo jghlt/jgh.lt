@@ -1,0 +1,256 @@
+/*
+------------------------------------------------------------------
+
+    - _mixins.scss / common
+    * stolen and appropriated from many sources
+    * http://www.sitepoint.com/sass-mixins-kickstart-project/
+    * https://glenwheeler.co.uk/writes-about/2015/06/10/the-best-sass-mixins-to-date
+
+------------------------------------------------------------------*/
+
+    //
+    // * usage @include prefix('column-count', 2);
+    @mixin prefix($property, $value) {
+        -webkit-#{$property}: #{$value};
+         -khtml-#{$property}: #{$value};
+           -moz-#{$property}: #{$value};
+            -ms-#{$property}: #{$value};
+             -o-#{$property}: #{$value};
+                #{$property}: #{$value};
+    }
+
+
+    //
+    // * usage @include placeholder{color:palette(brand)};
+    @mixin placeholder {
+
+        &::-webkit-input-placeholder { @content; }
+        &:-ms-input-placeholder { @content; }
+        &::-moz-placeholder { @content; }
+        &:-moz-placeholder { @content; }
+        &.placeholder { @content; }
+    }
+
+
+    //
+    // * usage @include all-link-states{color:palette(brand)};
+    @mixin all-link-states {
+
+        a,
+        a:hover,
+        a:visited,
+        a:active{
+            @content;
+        }
+    }
+
+
+    //
+    // * usage @include size(100%);
+    // * usage @include size(40px, 60px);
+    @mixin size($width:auto, $height:auto) {
+
+      @if ($width){
+        width: $width;
+      }
+
+      @if ($height){
+        height: $height;
+      }
+    }
+
+
+    //
+    // * usage @include position(relative);
+    // * usage @include position(absolute, $t:0, $l:0);
+    @mixin position($position:relative, $t: auto, $r: auto, $b: auto, $l: auto) {
+        position: $position;
+        top: $t;
+        right: $r;
+        bottom: $b;
+        left: $l;
+    }
+
+
+    // opacity
+    // * usage @include opacity(0.5);
+    @mixin opacity($opacity) {
+        opacity: $opacity;
+        $opacity-ie: $opacity * 100;
+        filter: alpha(opacity=$opacity-ie); //IE8
+    }
+
+
+    //
+    // * usage @include align();
+    // * usage @include align(left);
+    @mixin align($value:center) {
+       text-align:$value;
+    }
+
+
+    //
+    // * usage @include overflow();
+    // * usage @include overflow(visible);
+    @mixin overflow($value:hidden) {
+       overflow:$value;
+    }
+
+
+
+    //
+    // * usage @include unstyled-list();
+    @mixin unstyled-list {
+        list-style-type:none;
+        padding:0;
+        margin:0;
+    }
+
+
+    //
+    // * usage @include reset-spacing();
+    @mixin reset-spacing {
+        padding:0;
+        margin:0;
+    }
+
+
+    //
+    // * usage @include truncate();
+    @mixin truncate {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+    }
+
+
+    //
+    // * usage @include hide-text();
+    // * http://nicolasgallagher.com/another-css-image-replacement-technique/
+    @mixin hide-text {
+
+        // text-indent: 100%;
+        // white-space: nowrap;
+        // overflow: hidden;
+
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
+    }
+
+
+    //
+    // * usage @include hide-image();
+    // * http://nicolasgallagher.com/another-css-image-replacement-technique/
+    @mixin hide-image {
+        font: 0/0 a;
+        display: none !important;
+        visibility: hidden !important;
+    }
+
+
+    //
+    // * usage @include rounded(100%);
+    @mixin rounded($radius: 0.5em) {
+        -webkit-border-radius: $radius;
+        -moz-border-radius: $radius;
+        border-radius: $radius;
+    }
+
+
+    //
+    // * usage @include shadow();
+    // * usage @include shadow(10px);
+    @mixin shadow($depth:5px, $offset:-1px, $alpha:0.1) {
+        -moz-box-shadow: 0px 0px $depth $offset rgba(0, 0, 0, $alpha);
+        -webkit-box-shadow: 0px 0px $depth $offset rgba(0, 0, 0, $alpha);
+        box-shadow: 0px 0px $depth $offset rgba(0, 0, 0, $alpha);
+    }
+
+
+    //
+    // * usage @include gradient(palette(brand), palette(brand, dark));
+    @mixin gradient($from-color, $to-color) {
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from($from-color), to($to-color));
+        background-image: -webkit-linear-gradient(top, $from-color, $to-color);
+        background-image:    -moz-linear-gradient(top, $from-color, $to-color);
+        background-image:     -ms-linear-gradient(top, $from-color, $to-color);
+        background-image:      -o-linear-gradient(top, $from-color, $to-color);
+        -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorStr='#{$from-color}', EndColorStr='#{$to-color}')";
+    }
+
+
+    //
+    // * usage @include text-shadow();
+    @mixin text-shadow {
+        text-shadow: 0px 0px 5px rgba(0,0,0,0.15);
+    }
+
+
+    //
+    // * usage @include show-pseudo();
+    @mixin show-pseudo {
+        display: block;
+        content:"";
+    }
+
+
+    //
+    // * usage @include hide-br();
+    @mixin hide-br {
+
+        br{
+            display: none;
+        }
+    }
+
+
+    //
+    // * usage @include show-br();
+    @mixin show-br {
+
+        br{
+            display: block;
+        }
+    }
+
+
+    //
+    // * usage @include no-pointer();
+    @mixin no-pointer-events {
+        pointer-events: none;
+    }
+
+
+    //
+    // * usage @include is-clickable();
+    @mixin is-clickable {
+        cursor:pointer;
+    }
+
+
+    //
+    // * usage @include remove-webkit-styles();
+    @mixin remove-webkit-styles{
+        -webkit-appearance:none;
+    }
+
+
+    //
+    // * usage @include draggable();
+    @mixin draggable {
+
+        .no-touchevents & {
+
+            &:hover{
+                cursor: -webkit-grab;
+                cursor: -moz-grab;
+            }
+
+            &:active{
+                cursor: -webkit-grabbing;
+                cursor: -moz-grabbing;
+            }
+        }
+    }

@@ -1,0 +1,183 @@
+/*
+------------------------------------------------------------------
+
+	- _typography.scss / common
+    * http://www.sitepoint.com/sass-responsive-typography/
+    * http://zerosixthree.se/8-sass-mixins-you-must-have-in-your-toolbox/
+
+------------------------------------------------------------------*/
+
+
+    //
+    // * usage @include optimize-font();
+    @mixin optimize-font {
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        font-feature-settings: 'kern';
+        -webkit-font-feature-settings: 'kern';
+        -moz-font-feature-settings: 'kern';
+        font-kerning: normal;
+
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+        text-rendering:optimizeLegibility;
+    }
+
+
+    //
+    // * usage @include font-bold();
+    // * usage @include font-bold(true);
+    @mixin font-bold($optimise:false) {
+        font-family: "Favorit Bold", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:normal;
+        font-style:normal;
+
+        @if ($optimise = true) {
+            @include optimize-font;
+        }
+    }
+
+
+    //
+    // * usage @include font-regular();
+    // * usage @include font-regular(true);
+    @mixin font-regular($optimise:false) {
+        font-family: "Favorit Bold", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+        font-weight:normal;
+        font-style:normal;
+
+        @if ($optimise = true) {
+            @include optimize-font;
+        }
+    }
+
+
+    //
+    // * usage .element{ font-size: calculateRem($size);};
+    @function calculateRem($size) {
+        $remSize: $size / 16px;
+        @return $remSize * 1rem;
+    }
+
+
+    //
+    // * usage @include font-size(16px);
+    @mixin font-size($size) {
+        font-size: $size;
+        font-size: calculateRem($size);
+    }
+
+
+    //
+    // * better to set on html
+    // * http://stackoverflow.com/questions/6905834/should-i-set-the-default-font-size-on-the-body-or-html-element
+    html{
+        @include font-size(16px);
+        @include font-regular;
+        line-height: 1.1;
+    }
+
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    ul,
+    ol,
+    blockquote,
+    figure,
+    b {
+        margin-top: 0;
+        margin-bottom:1;
+        font-weight: normal;
+
+        &:last-child{
+            margin-bottom:0;
+        }
+    }
+
+
+    ul,
+    ol {
+        padding-left:spacing(1);
+    }
+
+
+    a:hover,
+    a:focus,
+    a:visited,
+    a:active {
+
+        &:not([class]){
+            text-decoration: none;
+            color:palette(black);
+        }
+    }
+
+
+    //
+    // * usage
+    // @include font-size-viewport();
+    @mixin font-size-viewport{
+        @include font-size(24px);
+
+        @include respond-to(small){
+            font-size: 4vw;
+        }
+    }
+
+
+    //
+    // * usage
+    // @include size-large();
+    @mixin font-size-large{
+        @include font-size(24px);
+
+        @include respond-to(small){
+            @include font-size(40px);
+        }
+
+        @include respond-to(medium) {
+            @include font-size(4);
+        }
+    }
+
+
+    //
+    // * usage
+    // @include size-medium();
+    @mixin font-size-medium{
+        @include font-size(16px);
+
+        @include respond-to(small){
+            @include font-size(18px);
+        }
+
+        @include respond-to(medium) {
+            @include font-size(20px);
+        }
+    }
+
+
+    //
+    // * usage
+    // @include size-body();
+    @mixin font-size-body{
+        @include font-size(13px);
+
+        @include respond-to(small){
+            @include font-size(16px);
+        }
+    }
+
+
+    //
+    // * usage
+    // @include size-small();
+    @mixin font-size-small{
+        @include font-size(13px);
+    }
+

@@ -1,0 +1,101 @@
+/*
+------------------------------------------------------------------
+
+    - _devices.scss / utilities
+    * media query reference below
+    * http://stephen.io/mediaqueries/
+    * https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+    * http://stackoverflow.com/questions/12539697/iphone-5-css-media-query
+    * http://andrew.hedges.name/experiments/aspect_ratio/
+
+    * intended for those one off situations where you need to target specific devices
+    * use sparingly
+
+------------------------------------------------------------------*/
+
+
+    //
+    // * settings
+    $devices:(
+        'iphone4'                   : "only screen and (min-device-width: 320px) and (max-device-width: 480px)",
+        'iphone4-portrait'          : "only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : portrait)",
+        'iphone4-landscape'         : "only screen and (min-device-width : 320px) and (max-device-width : 480px) and (orientation : landscape)",
+
+        //
+        'iphone5'                   : "only screen and (min-device-width : 320px) and (max-device-width : 568px)",
+        'iphone5-portrait'          : "and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : portrait)",
+        'iphone5-landscape'         : "only screen and (min-device-width : 320px) and (max-device-width : 568px) and (orientation : landscape)",
+
+        //
+        'iphone6'                   : "only screen and (min-device-width : 375px) and (max-device-width : 667px)",
+        'iphone6-portrait'          : "only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : portrait)",
+        'iphone6-landscape'         : "only screen and (min-device-width : 375px) and (max-device-width : 667px) and (orientation : landscape)",
+
+        //
+        'iphone6-plus'              : "only screen and (min-device-width : 414px) and (max-device-width : 736px)",
+        'iphone6-plus-portrait'     : "only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : portrait)",
+        'iphone6-plus-landscape'    : "only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape)",
+
+        //
+        'ipad-mini'                 : "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 1)",
+        'ipad-mini-portrait'        : "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 1)",
+        'ipad-mini-landscape'       : "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)and (-webkit-min-device-pixel-ratio: 1)",
+
+        //
+        'ipad'                      : "only screen and (min-device-width : 768px) and (max-device-width : 1024px)",
+        'ipad-portrait'             : "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait)",
+        'ipad-landscape'            : "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)",
+
+        //
+        'ipad-retina'               : "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (-webkit-min-device-pixel-ratio: 2)",
+        'ipad-retina-portrait'      : "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) and (-webkit-min-device-pixel-ratio: 2)",
+        'ipad-retina-landscape'     : "only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio: 2)",
+
+        // sometimes aspect ratio is the best way to taret only specific devices
+        'iphone4-only-portrait'      : "screen and (device-aspect-ratio: 2/3) and (orientation : portrait)",
+        'iphone4-only-landscape'     : "screen and (device-aspect-ratio: 3/2) and (orientation : landscape)",
+
+        //
+        'iphone5-only-portrait'      : "screen and (device-aspect-ratio: 40/71) and (orientation : portrait)",
+        'iphone5-only-landscape'     : "screen and (device-aspect-ratio: 71/40) and (orientation : landscape)",
+
+        //
+        'iphone6-only'               : "screen and (device-aspect-ratio: 375/667)",
+        'iphone6-only-portrait'      : "screen and (device-aspect-ratio: 375/667) and (orientation : portrait)",
+        'iphone6-only-landscape'     : "screen and (device-aspect-ratio: 667/375) and (orientation : landscape)",
+
+        //
+        'iphone6-plus-only'           : "screen and (device-aspect-ratio: 16/9)",
+        'iphone6-plus-only-portrait'  : "screen and (device-aspect-ratio: 16/9) and (orientation : portrait)",
+        'iphone6-plus-only-landscape' : "screen and (device-aspect-ratio: 9/16) and (orientation : landscape)",
+
+        //
+        'ipad-only'                   : "screen and (device-aspect-ratio: 3/4)",
+        'ipad-only-portrait'          : "screen and (device-aspect-ratio: 3/4) and (orientation : portrait)",
+        'ipad-only-landscape'         : "screen and (device-aspect-ratio: 4/3) and (orientation : landscape)"
+    );
+
+
+    //
+    // * usage @include respond-to-device(iphone4-only-portrait){ width:50%;}
+    // * usage @include respond-to-device(iphone4-only-landscape){ width:65%;}
+    @mixin respond-to-device($device) {
+
+        // Retrieves the value from the key
+        $query: map-get($devices, $device);
+
+        // If the key exists in the map
+        @if $query != null {
+
+            // Prints a media query based on the value
+            @media #{$query} {
+                @content;
+            }
+        }
+
+        // If the key doesn't exist in the map
+        @else {
+            @warn "Unfortunately, no value could be retrieved for `#{$device}`. "
+                + "Please make sure it is defined in `$devices` map.";
+        }
+    }

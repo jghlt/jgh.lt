@@ -1,0 +1,42 @@
+/*
+------------------------------------------------------------------
+
+    - _holding.scss / component
+
+------------------------------------------------------------------*/
+
+    //
+    // *
+    $module: '.holding';
+    #{$module}{
+        @include position(absolute, $t:0, $r:0, $b:0, $l:0);
+        @include z-index(main);
+        background-color: palette(white);
+        padding: spacing(1);
+        display: flex;
+        flex-direction: column;
+
+        .no-touchevents & {
+            cursor: url(../images/icon--cursor.svg) 0 0, default !important;
+
+            @include all-link-states {
+                cursor: url(../images/icon--cursor.svg) 0 0, default !important;
+            }
+        }
+
+        &__title,
+        &__foot{
+            display: block;
+        }
+
+        &__line{
+            @include font-size-viewport();
+            @include reset-spacing();
+            display: block;
+        }
+
+        &__foot{
+            margin-top: auto;
+        }
+    }
+

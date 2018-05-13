@@ -1,0 +1,12 @@
+@font-face {
+  font-family: 'Favorit Bold';
+  src: url('favorit-bold.eot'); /* IE9 Compat Modes */
+  src: url('favorit-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('favorit-bold.woff') format('woff'), /* Modern Browsers */
+       url('favorit-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('favorit-bold.svg#f613b1b4fb9027f17fa2d31bc4d38c5f') format('svg'); /* Legacy iOS */
+       
+  font-style:   normal;
+  font-weight:  700;
+}
+

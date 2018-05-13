@@ -1,10 +1,7 @@
-# osx noise
+# noise
 ######################
 .DS_Store
 profile
-
-# xcode noise
-######################
 build/*
 *.mode1
 *.mode1v3
@@ -14,45 +11,20 @@ build/*
 *.pbxuser
 *.xcworkspace
 xcuserdata
+*cache
 *.log
-
-# svn & cvs
-######################
 .svn
 CVS
 
-# Ignore sass
-######################
-.sass-cache
-
-# sublime noise
-######################
-*.sublime-project
-*.sublime-workspace
-
-# env #
+# env
 ######################
 .env
 
-# Ignore node modules
+# node modules
 ######################
 node_modules/*
 
-# deployments #
+# dist/build files
 ######################
-dploy.yaml
-
-# Ignore backups/admin/working directories
-######################
-todo.md
-admin/*
-backups/*
-working/*
-vendor/*
-
-# Ignore some src & build files
-######################
-public/assets/src/js/*
-public/assets/src/css/*
-public/**/fonts/*
-public/assets/dist/
+public/index.html
+public/dist/*

@@ -20,7 +20,7 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div className="contact">
+      <div className="Contact">
         <LinkList
           title={contactData.title}
           links={contactData.items}

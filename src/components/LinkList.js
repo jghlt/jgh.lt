@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 function LinkList(props) {
   return (
-    <div className="link-list">
+    <div className="LinkList">
       <h1>
         {props.title}
         <br/>

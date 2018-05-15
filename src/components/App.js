@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Header from './Header';
+import Projects from './Projects';
+import Contact from './Contact';
 
 class App extends React.Component {
   static propTypes = {
@@ -8,6 +9,7 @@ class App extends React.Component {
 
   state = {
   }
+
   componentDidMount() {
     console.log('App: componentDidMount');
   }
@@ -18,11 +20,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <Header/>
-        <div id="app">
-          <h1>App</h1>
-        </div>
+      <div className="app">
+        <Projects />
+        <Contact />
       </div>
     );
   }

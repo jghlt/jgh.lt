@@ -55,6 +55,7 @@
     "pubsub-js": "^1.5.3",
     "raf": "^3.4.0",
     "react": "^16.3.2",
-    "react-dom": "^16.3.2"
+    "react-dom": "^16.3.2",
+    "react-responsive": "^4.1.0"
   }
 }

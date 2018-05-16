@@ -10,7 +10,7 @@ function ThumbnailList(props) {
         <br/>
         ↓
       </h1>
-      {props.links.map(item => <ThumbnailListItem key={item.title} {...props} />)}
+      {props.links.map(item => <ThumbnailListItem key={item.title} {...item} />)}
     </div>
   );
 }

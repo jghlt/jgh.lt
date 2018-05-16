@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import LinkListItem from './LinkListItem';
 
 function LinkList(props) {
   return (
@@ -9,7 +10,14 @@ function LinkList(props) {
         <br/>
         ↓
       </h1>
-      {props.links.map(item => <li key={item.title} className="link-item">{item.title}</li>)}
+      { props.links.map((item) => {
+        return (
+          <LinkListItem
+            key={item.title}
+            {...item}
+          />
+        );
+      })}
     </div>
   );
 }

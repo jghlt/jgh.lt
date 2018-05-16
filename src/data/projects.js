@@ -37,7 +37,8 @@ const projects = {
         src: ''
       }
     }
-  ]
+  ],
+  footer: '↳ NYC'
 };
 
 export default projects;

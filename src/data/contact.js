@@ -16,7 +16,8 @@ const contact = {
       title: 'github',
       target: '_blank'
     }
-  ]
+  ],
+  footer: '↓'
 };
 
 export default contact;

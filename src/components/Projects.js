@@ -3,8 +3,8 @@ import MediaQuery from 'react-responsive';
 import Breakpoints from './Breakpoints';
 import projectsData from '../data/projects';
 import ThumbnailList from './ThumbnailList';
-import MediGallery from './MediaGallery';
-import LinkList from './LinkList';
+import ProjectsMedia from './ProjectsMedia';
+import ProjectsList from './ProjectsList';
 
 class Projects extends React.Component {
   static propTypes = {
@@ -23,7 +23,7 @@ class Projects extends React.Component {
 
   render() {
     return (
-      <div className="Projects">
+      <div className="relative">
         <MediaQuery query={Breakpoints.small}>
           <ThumbnailList
             title={projectsData.title}
@@ -31,12 +31,13 @@ class Projects extends React.Component {
           />
         </MediaQuery>
         <MediaQuery query={Breakpoints.medium}>
-          <MediGallery
-            images={projectsData.items}
+          <ProjectsMedia
+            media={projectsData.items}
           />
-          <LinkList
+          <ProjectsList
             title={projectsData.title}
             links={projectsData.items}
+            footer={projectsData.footer}
           />
         </MediaQuery>
       </div>

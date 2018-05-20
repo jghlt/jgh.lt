@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function MediaGalleryItem(props) {
+function ProjectsMediaItem(props) {
   return (
-    <div className="MediaGalleryItem">
+    <div className="ProjectsMediaItem">
       MediaItem
     </div>
   );
 }
 
-export default MediaGalleryItem;
+export default ProjectsMediaItem;

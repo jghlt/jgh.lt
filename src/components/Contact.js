@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import contactData from '../data/contact';
-import LinkList from './LinkList';
+import ContactList from './ContactList';
 
 class Contact extends React.Component {
   static propTypes = {
@@ -20,10 +20,11 @@ class Contact extends React.Component {
 
   render() {
     return (
-      <div className="Contact">
-        <LinkList
+      <div>
+        <ContactList
           title={contactData.title}
           links={contactData.items}
+          footer={contactData.footer}
         />
       </div>
     );

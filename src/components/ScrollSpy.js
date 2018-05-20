@@ -1,6 +1,4 @@
 import React from 'react';
-import MediaQuery from 'react-responsive';
-import Breakpoints from './Breakpoints';
 
 class ScrollSpy extends React.Component {
   static propTypes = {
@@ -19,9 +17,9 @@ class ScrollSpy extends React.Component {
 
   render() {
     return (
-      <div className="ScrollSpy">
+      <React.Fragment>
         {this.props.children}
-      </div>
+      </React.Fragment>
     );
   }
 }

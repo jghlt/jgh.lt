@@ -2,7 +2,7 @@ const projects = {
   title: 'Digital Design & Development',
   items: [
     {
-      link: 'https://github.com/jghlt/utilss',
+      link: 'http://github.com/jghlt/utilss',
       title: 'utilss',
       target: '_blank',
       media: 'utilss',
@@ -11,7 +11,7 @@ const projects = {
       }
     },
     {
-      link: 'https://lastpairs.co/',
+      link: 'http://lastpairs.co/',
       title: 'lastpai.rs',
       target: '_blank',
       media: 'lastpairs',
@@ -20,7 +20,7 @@ const projects = {
       }
     },
     {
-      link: 'https://sneakerintel.com/',
+      link: 'http://sneakerintel.com/',
       title: 'sneakerintel',
       target: '_blank',
       media: 'sneakerintel',
@@ -29,7 +29,7 @@ const projects = {
       }
     },
     {
-      link: 'https://digitalagenci.es/nyc',
+      link: 'http://digitalagenci.es/nyc',
       title: 'digitalagenci.es',
       target: '_blank',
       media: 'digitalagencies',
@@ -38,7 +38,7 @@ const projects = {
       }
     }
   ],
-  footer: '↳ NYC'
+  footer: '↓'
 };
 
 export default projects;

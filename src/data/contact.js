@@ -2,7 +2,7 @@ const contact = {
   title: 'Say hello',
   items: [
     {
-      link: 'hello@jgh.lt',
+      link: 'mailto:hello@jgh.lt',
       title: 'hello@jgh.lt',
       target: '_blank'
     },
@@ -17,7 +17,7 @@ const contact = {
       target: '_blank'
     }
   ],
-  footer: '↓'
+  footer: '↳ NYC'
 };
 
 export default contact;

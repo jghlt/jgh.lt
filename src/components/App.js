@@ -23,7 +23,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="App">
+      <div>
         <MediaQuery query={Breakpoints.small}>
           <Projects />
           <Contact />

@@ -14,7 +14,7 @@ function ProjectsList(props) {
           { props.links.map((item) => {
             return (
               <li key={item.title} className="_fs-title">
-                <a href={item.link} className="_c-black link no-underline hover-moon-gray" target={item.target}>
+                <a href={item.link} className="_c-black no-underline hover-moon-gray" target={item.target}>
                   {item.title}
                 </a>
               </li>

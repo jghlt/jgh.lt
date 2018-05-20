@@ -35,9 +35,22 @@ html{
 }
 
 ._fs-title{
-  font-size:4rem;
-  font-size:3.88vw;
+  font-size:32px;
 }
 ._mt-auto{
   margin-top:auto;
+}
+
+@media screen and (min-width: 30em){
+  ._fs-title{
+    font-size:4rem;
+    font-size:3.88vw;
+  }
+}
+
+@media screen and (min-width: 48em){
+  ._u-fullscreen{
+    height:auto;
+    min-height:100vh;
+  }
 }

@@ -11,6 +11,7 @@ class Projects extends React.Component {
   }
 
   state = {
+    project: null
   }
 
   componentDidMount() {
@@ -19,6 +20,20 @@ class Projects extends React.Component {
 
   componentDidUpdate() {
     console.log('Projects: componentDidUpdate');
+  }
+
+  setProject = (key) => {
+    console.log('Projects: setProject');
+    this.setState({
+      project: key
+    });
+  }
+
+  clearProject = (key) => {
+    console.log('Projects: clearProject');
+    this.setState({
+      project: null
+    });
   }
 
   render() {
@@ -32,12 +47,15 @@ class Projects extends React.Component {
         </MediaQuery>
         <MediaQuery query={Breakpoints.medium}>
           <ProjectsMedia
+            project={this.state.project}
             media={projectsData.items}
           />
           <ProjectsList
             title={projectsData.title}
             links={projectsData.items}
             footer={projectsData.footer}
+            setProject={this.setProject}
+            clearProject={this.clearProject}
           />
         </MediaQuery>
       </div>

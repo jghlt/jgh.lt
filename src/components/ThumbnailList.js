@@ -4,13 +4,17 @@ import ThumbnailListItem from './ThumbnailListItem';
 
 function ThumbnailList(props) {
   return (
-    <div className="ThumbnailList">
-      <h1>
-        {props.title}
-        <br/>
-        ↓
-      </h1>
-      {props.links.map(item => <ThumbnailListItem key={item.title} {...item} />)}
+    <div className="relative w-100">
+      <div className="pa3">
+        <div className="pb4">
+          <h1 className="ma0 _fs-title">
+            {props.title}
+            <br/>
+            ↓
+          </h1>
+        </div>
+        {props.links.map(item => <ThumbnailListItem key={item.title} {...item} />)}
+      </div>
     </div>
   );
 }

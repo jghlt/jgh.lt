@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import contactData from '../data/contact';
+import contactData from '../data/holding';
 import ContactList from './ContactList';
 
-class Contact extends React.Component {
+class Holding extends React.Component {
   static propTypes = {
   }
 
@@ -11,11 +11,11 @@ class Contact extends React.Component {
   }
 
   componentDidMount() {
-    console.log('Contact: componentDidMount');
+    console.log('Holding: componentDidMount');
   }
 
   componentDidUpdate() {
-    console.log('Contact: componentDidUpdate');
+    console.log('Holding: componentDidUpdate');
   }
 
   render() {
@@ -31,4 +31,4 @@ class Contact extends React.Component {
   }
 }
 
-export default Contact;
+export default Holding;

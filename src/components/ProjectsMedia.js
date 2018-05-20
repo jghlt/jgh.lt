@@ -4,8 +4,8 @@ import ProjectsMediaItem from './ProjectsMediaItem';
 
 function ProjectsMedia(props) {
   return (
-    <div className="absolute w-100 vh-100">
-      {props.media.map(item => <ProjectsMediaItem key={item.title} image={item.image} />)}
+    <div className="absolute w-100 z-0 _u-fullscreen">
+      {props.project}
     </div>
   );
 }

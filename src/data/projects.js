@@ -1,5 +1,5 @@
 const projects = {
-  title: 'Digital Design & Development',
+  title: 'Digital design & development',
   items: [
     {
       link: 'http://github.com/jghlt/utilss',

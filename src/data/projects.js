@@ -5,36 +5,32 @@ const projects = {
       link: 'http://github.com/jghlt/utilss',
       title: 'utilss',
       target: '_blank',
-      media: 'utilss',
       image: {
-        src: ''
+        name: '',
       }
     },
     {
       link: 'http://lastpairs.co/',
-      title: 'lastpai.rs',
+      title: 'lastpairs',
       target: '_blank',
-      media: 'lastpairs',
       image: {
-        src: ''
+        name: '',
       }
     },
     {
       link: 'http://sneakerintel.com/',
       title: 'sneakerintel',
       target: '_blank',
-      media: 'sneakerintel',
       image: {
-        src: ''
+        name: '',
       }
     },
     {
       link: 'http://digitalagenci.es/nyc',
-      title: 'digitalagenci.es',
+      title: 'digitalagencies',
       target: '_blank',
-      media: 'digitalagencies',
       image: {
-        src: ''
+        name: '',
       }
     }
   ],

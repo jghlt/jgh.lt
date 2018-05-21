@@ -5,7 +5,7 @@ import ThumbnailListItem from './ThumbnailListItem';
 function ThumbnailList(props) {
   return (
     <div className="relative w-100">
-      <div className="pa3">
+      <div className="pa3 pb0">
         <div className="pb4">
           <h1 className="ma0 _fs-title">
             {props.title}

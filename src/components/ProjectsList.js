@@ -12,17 +12,17 @@ function ProjectsList(props) {
             ↓
           </h1>
           <ul className="list ma0 pl0 pb4">
-            { props.links.map((item) => {
+            { props.projects.map((project) => {
               return (
-                <li key={item.title} className="_fs-title">
+                <li key={project.title} className="_fs-title">
                   <a
-                    href={item.link}
+                    href={project.link}
                     className="_c-black no-underline hover-moon-gray"
-                    target={item.target}
-                    onMouseEnter={() => props.setProject(item.title)}
-                    onMouseLeave={() => props.clearProject(item.title)}
+                    target={project.target}
+                    onMouseEnter={() => props.setProject(project.title)}
+                    onMouseLeave={() => props.clearProject(project.title)}
                   >
-                    {item.title}
+                    {project.title}
                   </a>
                 </li>
               );
@@ -41,7 +41,7 @@ function ProjectsList(props) {
 
 ProjectsList.propTypes = {
   title: PropTypes.string.isRequired,
-  links: PropTypes.arrayOf(PropTypes.shape({
+  projects: PropTypes.arrayOf(PropTypes.shape({
     link: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired
   })).isRequired,

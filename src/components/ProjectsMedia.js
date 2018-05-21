@@ -1,22 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ProjectsMediaItem from './ProjectsMediaItem';
 
 function ProjectsMedia(props) {
+  if (!props.project) {
+    return null;
+  }
   return (
     <div className="absolute w-100 z-0 _u-fullscreen">
-      {props.project}
+      <div className="absolute w-100 h-100 flex flex-column justify-center items-center">
+        <div className="w-80 mw8">
+          <div className="aspect-ratio aspect-ratio--16x9">
+            <div className="aspect-ratio--object cover bg-near-white" />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
-
-ProjectsMedia.propTypes = {
-  media: PropTypes.arrayOf(PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    image: PropTypes.shape({
-      src: PropTypes.string.isRequired
-    })
-  })).isRequired
-};
 
 export default ProjectsMedia;

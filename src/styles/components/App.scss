@@ -41,6 +41,10 @@ html{
   margin-top:auto;
 }
 
+._of-cover{
+  object-fit: cover;
+}
+
 @media screen and (min-width: 30em){
   ._fs-title{
     font-size:4rem;

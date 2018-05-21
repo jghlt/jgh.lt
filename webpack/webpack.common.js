@@ -39,7 +39,7 @@ module.exports = {
     }),
     new HtmlWebpackHarddiskPlugin(),
     new MiniCssExtractPlugin({
-      filename: (isDevelopment) ? '[name].css' : '[name].[chunkhash:8].css'
+      filename: (isDevelopment) ? '[name].css' : '[name].[chunkhash:8].css',
     })
   ],
   module: {
@@ -56,8 +56,12 @@ module.exports = {
       {
         test: /\.(scss)$/,
         use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
+          {
+            loader: MiniCssExtractPlugin.loader
+          },
+          {
+            loader: 'css-loader'
+          },
           {
             loader: 'postcss-loader',
             options: {
@@ -76,12 +80,25 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|jpg)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+              quality: 85,
+              publicPath: '/dist'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(svg)$/,
         use: [
           {
             loader: 'file-loader',
             options: {
-              publicPath: './'
+              publicPath: '/dist'
             }
           }
         ]
@@ -92,7 +109,7 @@ module.exports = {
           {
             loader: 'file-loader',
             options: {
-              publicPath: './'
+              publicPath: '/dist'
             }
           }
         ]

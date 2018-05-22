@@ -34,8 +34,7 @@ module.exports = {
       alwaysWriteToDisk: (isDevelopment),
       minify: (isDevelopment) || {
         collapseWhitespace: true
-      },
-      inlineSource: (isDevelopment) ? '' : '.(css)$'
+      }
     }),
     new HtmlWebpackHarddiskPlugin(),
     new MiniCssExtractPlugin({
@@ -80,14 +79,16 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg)$/,
+        test: /\.(jpg)$/i,
         use: [
           {
-            loader: 'url-loader',
+            loader: 'advanced-image-loader',
             options: {
-              limit: 8192,
+              width: 1280,
               quality: 85,
-              publicPath: '/dist'
+              srcset: [480, 768, 1024, 1280],
+              publicPath: '/dist',
+              name: '[name]-[width]-[quality].[hash].[ext]'
             }
           }
         ]

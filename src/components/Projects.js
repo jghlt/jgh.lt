@@ -7,38 +7,29 @@ import ProjectsMedia from './ProjectsMedia';
 import ProjectsList from './ProjectsList';
 
 class Projects extends React.Component {
-  static propTypes = {
-  }
-
-  state = {
-    project: null
-  }
-
-  componentDidMount() {
-    console.log('Projects: componentDidMount');
-    this.setState({
+  constructor() {
+    super();
+    this.state = {
       project: null
-    });
-  }
-
-  componentDidUpdate() {
-    console.log('Projects: componentDidUpdate');
+    };
   }
 
   setProject = (key) => {
     console.log('Projects: setProject');
-    const project = projectsData.items.filter((object) => {
-      return object.title === key;
-    });
-    this.setState({
-      project: project[0] || null
+    const project = projectsData.items.filter(object => object.title === key);
+    this.setState(() => {
+      return {
+        project: project[0] || null
+      };
     });
   }
 
   clearProject = () => {
     console.log('Projects: clearProject');
-    this.setState({
-      project: null
+    this.setState(() => {
+      return {
+        project: null
+      };
     });
   }
 
@@ -54,6 +45,7 @@ class Projects extends React.Component {
         <MediaQuery query={Breakpoints.medium}>
           <ProjectsMedia
             project={this.state.project}
+            projects={projectsData.items}
           />
           <ProjectsList
             title={projectsData.title}

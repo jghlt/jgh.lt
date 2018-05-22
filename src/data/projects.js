@@ -1,3 +1,8 @@
+import utilssImage from '../images/utilss.jpg';
+import lastpairsImage from '../images/lastpairs.jpg';
+import sneakerintelImage from '../images/sneakerintel.jpg';
+import digitalagenciesImage from '../images/digitalagencies.jpg';
+
 const projects = {
   title: 'Digital design & development',
   items: [
@@ -5,33 +10,25 @@ const projects = {
       link: 'http://github.com/jghlt/utilss',
       title: 'utilss',
       target: '_blank',
-      image: {
-        name: '',
-      }
+      image: utilssImage
     },
     {
       link: 'http://lastpairs.co/',
       title: 'lastpairs',
       target: '_blank',
-      image: {
-        name: '',
-      }
+      image: lastpairsImage
     },
     {
       link: 'http://sneakerintel.com/',
       title: 'sneakerintel',
       target: '_blank',
-      image: {
-        name: '',
-      }
+      image: sneakerintelImage
     },
     {
       link: 'http://digitalagenci.es/nyc',
       title: 'digitalagencies',
       target: '_blank',
-      image: {
-        name: '',
-      }
+      image: digitalagenciesImage
     }
   ],
   footer: '↓'

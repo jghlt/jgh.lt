@@ -13,14 +13,6 @@ class App extends React.Component {
   state = {
   }
 
-  componentDidMount() {
-    console.log('App: componentDidMount');
-  }
-
-  componentDidUpdate() {
-    console.log('App: componentDidUpdate');
-  }
-
   render() {
     return (
       <div>

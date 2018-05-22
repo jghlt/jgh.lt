@@ -1,17 +1,23 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ProjectsMediaItem from './ProjectsMediaItem';
 
 function ProjectsMedia(props) {
-  if (!props.project) {
-    return null;
-  }
+  const title = (props.project && props.project.title) ? props.project.title : false;
   return (
     <div className="absolute w-100 z-0 _u-fullscreen">
       <div className="absolute w-100 h-100 flex flex-column justify-center items-center">
         <div className="w-80 mw8">
-          <div className="aspect-ratio aspect-ratio--16x9">
-            <div className="aspect-ratio--object cover bg-near-white" />
-          </div>
+          { props.projects.map((project) => {
+            return (
+              <ProjectsMediaItem
+                key={project.title}
+                image={project.image}
+                display={project.title === title}
+              />
+            );
+          })
+          }
         </div>
       </div>
     </div>

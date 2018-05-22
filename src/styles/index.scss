@@ -1,2 +1,62 @@
 @import '~tachyons/css/tachyons.css';
-@import 'components/app.scss';
+
+// fonts ...
+@font-face {
+  font-family: 'Favorit Bold';
+  src: url('../fonts/1469358906/favorit-bold.eot');
+  src: url('../fonts/1469358906/favorit-bold.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/1469358906/favorit-bold.woff') format('woff'),
+       url('../fonts/1469358906/favorit-bold.ttf')  format('truetype'),
+       url('../fonts/1469358906/favorit-bold.svg#f613b1b4fb9027f17fa2d31bc4d38c5f') format('svg');
+  font-style:   normal;
+  font-weight:  700;
+}
+
+// general ...
+*{
+  // cursor: url('../images/cursor.svg') 0 0, default !important;
+}
+
+html,
+body{
+  font-size:16px;
+
+}
+
+html{
+  font-family: 'Favorit Bold', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ffffff;
+  color:#282828;
+}
+
+
+// project specific helpers ...
+._c-black{
+  color:#282828;
+}
+
+._fs-title{
+  font-size:32px;
+}
+._mt-auto{
+  margin-top:auto;
+}
+
+._of-cover{
+  object-fit: cover;
+}
+
+@media screen and (min-width: 30em){
+  ._fs-title{
+    font-size:4rem;
+    font-size:3.88vw;
+  }
+}
+
+@media screen and (min-width: 48em){
+  ._u-fullscreen{
+    height:auto;
+    min-height:100vh;
+  }
+}

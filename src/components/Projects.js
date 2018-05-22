@@ -15,7 +15,6 @@ class Projects extends React.Component {
   }
 
   setProject = (key) => {
-    console.log('Projects: setProject');
     const project = projectsData.items.filter(object => object.title === key);
     this.setState(() => {
       return {
@@ -25,7 +24,6 @@ class Projects extends React.Component {
   }
 
   clearProject = () => {
-    console.log('Projects: clearProject');
     this.setState(() => {
       return {
         project: null

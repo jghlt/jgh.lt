@@ -88,7 +88,7 @@ module.exports = {
               quality: 85,
               srcset: [480, 768, 1024, 1280],
               publicPath: '/dist',
-              name: '[name]-[width]-[quality].[hash].[ext]'
+              name: '[name]-[width]-[quality]-[hash]'
             }
           }
         ]

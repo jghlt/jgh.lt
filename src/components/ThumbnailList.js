@@ -25,7 +25,8 @@ ThumbnailList.propTypes = {
     link: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     image: PropTypes.shape({
-      src: PropTypes.string.isRequired
+      src: PropTypes.string.isRequired,
+      srcset: PropTypes.string.isRequired
     })
   })).isRequired
 };

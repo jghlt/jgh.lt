@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { debounce, throttle } from 'lodash';
 
 class ScrollSpy extends React.Component {
   constructor() {
@@ -11,48 +12,78 @@ class ScrollSpy extends React.Component {
   }
 
   componentDidMount() {
-    this.setCurrentSection()
-    window.addEventListener('scroll', this.setCurrentSection)
+    window.addEventListener('scroll', _.throttle(this.handleScroll, 250));
+    window.addEventListener('resize', _.debounce(this.handleResize, 250));
+    this.update();
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.setCurrentSection)
+    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleResize);
   }
 
-  setCurrentSection = () => {
-    const { sections } = this.state;
-    const sectionCount = sections.length;
-  }
-
-  handleClick = (event) => {
-    event.preventDefault();
-    console.log(event);
-  }
-
-  renderChildren = () => {
-    return React.Children.map(this.props.children, (child, index) => {
-      const childTypeName = child.type.name.toLowerCase();
-      const sectionId = `${childTypeName}`;
-      return (
-        <div id={sectionId} className="relative z-0">
-          {child}
-        </div>
-      )
+  setSections = () => {
+    const refs = this.refs;
+    const keys = Object.keys(refs);
+    const sections = keys.map((key) => {
+      return {
+        id: key,
+        bounds: {
+          top: refs[key].offsetTop,
+          bottom: refs[key].offsetTop + refs[key].offsetHeight
+        }
+      };
+    });
+    this.setState(() => {
+      return {
+        sections
+      };
     });
   }
 
-  renderLinks = () => {
-    return React.Children.map(this.props.children, (child) => {
-      const childTypeName = child.type.name.toLowerCase();
-      const LinkTarget = `#${childTypeName}`;
+  setCurrentSection = (section) => {
+    this.setState(() => {
+      return {
+        currentSection: section
+      };
+    });
+  }
+
+  update = () => {
+    this.setSections();
+    setTimeout(() => {
+      this.checkSections();
+    }, 0);
+  }
+
+  checkSections = () => {
+    const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    const activePosition = scrollPosition + (window.outerHeight / 2);
+    this.state.sections.forEach((section) => {
+      if ((activePosition > section.bounds.top) && (activePosition < section.bounds.bottom)) {
+        // console.log(section.id);
+        if (section.id !== this.state.currentSection) {
+          this.setCurrentSection(section.id);
+        }
+      }
+    });
+  }
+
+  handleScroll = () => {
+    this.checkSections();
+  }
+
+  handleResize = () => {
+    this.update();
+  }
+
+  renderSections = () => {
+    return React.Children.map(this.props.children, (section, index) => {
+      const sectionIndex = `section-${index}`;
       return (
-        <a className="pa2 db" href={LinkTarget} onClick={this.handleClick}>
-          <span className="db w1 h1 br-100 bg-near-white">
-            <span className="clip">
-              {`${childTypeName}`}
-            </span>
-          </span>
-        </a>
+        <div ref={sectionIndex} className="relative z-0">
+          {section}
+        </div>
       );
     });
   }
@@ -65,10 +96,20 @@ class ScrollSpy extends React.Component {
     );
   }
 
+  renderLinks = () => {
+    return React.Children.map(this.props.children, () => {
+      return (
+        <div className="pa2">
+          <button className="_o-dot pa0 bg-near-white b--none" />
+        </div>
+      );
+    });
+  }
+
   render() {
     return (
       <div className="relative">
-        {this.renderChildren()}
+        {this.renderSections()}
         {this.renderIndicator()}
       </div>
     );

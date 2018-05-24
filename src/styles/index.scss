@@ -47,6 +47,13 @@ html{
   object-fit: cover;
 }
 
+._o-dot{
+  width:12px;
+  height:12px;
+  border-radius:100%;
+  display: block;
+}
+
 @media screen and (min-width: 30em){
   ._fs-title{
     font-size:4rem;

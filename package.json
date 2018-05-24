@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "lodash": "^4.17.10",
     "npm": "^6.0.1",
     "popmotion-pose": "^1.5.0",
     "prop-types": "^15.6.1",

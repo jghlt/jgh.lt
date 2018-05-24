@@ -26,7 +26,7 @@ const projects = {
     },
     {
       link: 'http://digitalagenci.es/nyc',
-      title: 'digitalagencies',
+      title: 'digitalagenci.es',
       target: '_blank',
       image: digitalagenciesImage
     }

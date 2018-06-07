@@ -36,21 +36,27 @@ class ProjectsMediaItem extends React.Component {
 
   render() {
     return (
-      <div className={`aspect-ratio aspect-ratio--16x9 ${!this.props.display ? 'dn' : ''}`}>
-        {this.state.loaded ?
-          <div className="aspect-ratio--object">
-            <div className="aspect-ratio--object bg-near-white"/>
-            <div className="aspect-ratio--object cover" style={{ backgroundImage: `url(${this.state.src})` }}/>
+      <div className={`absolute w-100 h-100 ${!this.props.display ? 'dn' : ''}`}>
+        <div className="absolute w-100 h-100 flex flex-column justify-center items-center">
+          <div className="w-80 mw8">
+            <div className="aspect-ratio aspect-ratio--16x9">
+              {this.state.loaded ?
+                <div className="aspect-ratio--object">
+                  <div className="aspect-ratio--object bg-near-white"/>
+                  <div className="aspect-ratio--object cover" style={{ backgroundImage: `url(${this.state.src})` }}/>
+                </div>
+              : null
+              }
+              <div className="dn">
+                <img
+                  src={this.props.image.src}
+                  srcSet={this.props.image.srcset}
+                  onLoad={event => this.handleOnLoad(event)}
+                  alt=""
+                />
+              </div>
+            </div>
           </div>
-        : null
-        }
-        <div className="dn">
-          <img
-            src={this.props.image.src}
-            srcSet={this.props.image.srcset}
-            onLoad={event => this.handleOnLoad(event)}
-            alt=""
-          />
         </div>
       </div>
     );

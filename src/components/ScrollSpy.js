@@ -1,19 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import SmoothScroll from 'smooth-scroll';
 import { debounce, throttle } from 'lodash';
+import { easeOutExpo } from './easings';
 
 class ScrollSpy extends React.Component {
   constructor() {
     super();
+    this.scroll = new SmoothScroll();
     this.state = {
-      sections: [],
+      sections: null,
       currentSection: null
     };
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', _.throttle(this.handleScroll, 250));
-    window.addEventListener('resize', _.debounce(this.handleResize, 250));
+    window.addEventListener('scroll', _.throttle(this.handleScroll, 160));
+    window.addEventListener('resize', _.debounce(this.handleResize, 240));
     this.update();
   }
 
@@ -25,12 +28,15 @@ class ScrollSpy extends React.Component {
   setSections = () => {
     const refs = this.refs;
     const keys = Object.keys(refs);
+    const scrollPosition = this.currentScrollPosition();
     const sections = keys.map((key) => {
+      const element = refs[key];
+      const bounding = element.getBoundingClientRect();
       return {
         id: key,
         bounds: {
-          top: refs[key].offsetTop,
-          bottom: refs[key].offsetTop + refs[key].offsetHeight
+          top: bounding.top + scrollPosition,
+          bottom: bounding.bottom + scrollPosition
         }
       };
     });
@@ -44,7 +50,7 @@ class ScrollSpy extends React.Component {
   setCurrentSection = (section) => {
     this.setState(() => {
       return {
-        currentSection: section
+        currentSection: parseInt(section, 10)
       };
     });
   }
@@ -56,15 +62,33 @@ class ScrollSpy extends React.Component {
     }, 0);
   }
 
-  checkSections = () => {
+  currentScrollPosition = () => {
     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+    return scrollPosition;
+  }
+
+  checkSections = () => {
+    const scrollPosition = this.currentScrollPosition();
     const activePosition = scrollPosition + (window.outerHeight / 2);
-    this.state.sections.forEach((section) => {
-      if ((activePosition > section.bounds.top) && (activePosition < section.bounds.bottom)) {
-        // console.log(section.id);
-        if (section.id !== this.state.currentSection) {
-          this.setCurrentSection(section.id);
-        }
+    const currentSection = this.state.sections.filter((section) => {
+      return (activePosition > section.bounds.top) && (activePosition < section.bounds.bottom);
+    });
+    const setCurrentSection = (
+      currentSection.length && currentSection[0].id !== this.state.currentSection
+    ) ? currentSection[0].id : false;
+    if (setCurrentSection) {
+      this.setCurrentSection(setCurrentSection);
+    }
+  }
+
+  scrollToSection = (event, index) => {
+    event.preventDefault();
+    const section = this.state.sections[index];
+    const targetScrollPosition = (section) ? section.bounds.top : 0;
+    this.scroll.animateScroll(targetScrollPosition, false, {
+      speed: 650,
+      customEasing: (time) => {
+        return easeOutExpo(time, 0, 1, 1);
       }
     });
   }
@@ -78,39 +102,34 @@ class ScrollSpy extends React.Component {
   }
 
   renderSections = () => {
-    return React.Children.map(this.props.children, (section, index) => {
-      const sectionIndex = `section-${index}`;
+    return React.Children.map(this.props.children, (child, index) => {
       return (
-        <div ref={sectionIndex} className="relative z-0">
-          {section}
+        <div ref={`${index}`}>
+          {child}
         </div>
-      );
-    });
-  }
-
-  renderIndicator = () => {
-    return (
-      <div className="fixed z-1 w-10 top-0 right-0 h-100 flex flex-column justify-center items-center">
-        {this.renderLinks()}
-      </div>
-    );
-  }
-
-  renderLinks = () => {
-    return React.Children.map(this.props.children, () => {
-      return (
-        <div className="pa2">
-          <button className="_o-dot pa0 bg-near-white b--none" />
-        </div>
-      );
+      )
     });
   }
 
   render() {
+    const { sections, currentSection } = this.state;
     return (
       <div className="relative">
         {this.renderSections()}
-        {this.renderIndicator()}
+        {sections
+          ?
+            <div className="fixed z-1 w-10 top-0 right-0 h-100 flex flex-column justify-center items-center">
+              {sections.map((section, index) => {
+                return (
+                  <div key={index} className="pa2">
+                    <button onClick={event => this.scrollToSection(event, index)} className={`_o-dot pointer pa0 b--none ${currentSection === index ? 'bg-moon-gray' : 'bg-near-white'}`} />
+                  </div>
+                );
+              })}
+            </div>
+          :
+          null
+        }
       </div>
     );
   }

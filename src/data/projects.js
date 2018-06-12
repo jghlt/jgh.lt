@@ -1,6 +1,6 @@
 import utilssImage from '../images/utilss.jpg';
 import lastpairsImage from '../images/lastpairs.jpg';
-import digitalagenciesImage from '../images/digitalagencies.jpg';
+import sneakerintelImage from '../images/sneakerintel-03.jpg';
 import netilspaceImage from '../images/netilspace.jpg';
 import ambagImage from '../images/ambag.jpg';
 
@@ -21,10 +21,10 @@ const projects = {
       image: lastpairsImage
     },
     {
-      link: 'http://digitalagenci.es/nyc',
-      title: 'digitalagenci.es',
+      link: 'http://sneakerintel.com/',
+      title: 'sneakerintel',
       target: '_blank',
-      image: digitalagenciesImage
+      image: sneakerintelImage
     },
     {
       link: 'http://netil.space/',

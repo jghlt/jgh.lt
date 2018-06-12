@@ -70,25 +70,32 @@ class ThumbnailListItem extends React.Component {
         onChange={this.handleVisibilityChange}
       >
         <div className="relative w-100 pb3">
-          <a className="db" href={this.props.link} target={this.props.target}>
-            <div className="aspect-ratio aspect-ratio--16x9">
-              <div className="aspect-ratio--object cover bg-near-white"/>
-              {this.state.loaded ?
-                <div className="aspect-ratio--object cover" style={{ backgroundImage: `url(${this.state.src})` }}/>
-              : null
-              }
-              {this.state.visible ?
-                <div className="dn">
-                  <img
-                    src={this.props.image.src}
-                    srcSet={this.props.image.srcset}
-                    onLoad={event => this.handleOnLoad(event)}
-                    alt={this.props.title}
-                  />
-                </div>
-              : null
-              }
+          <a className="db no-underline relative" href={this.props.link} target={this.props.target}>
+            <div className="relative z-1">
+              <div className="aspect-ratio aspect-ratio--16x9">
+                <div className="aspect-ratio--object cover bg-near-white"/>
+                {this.state.loaded ?
+                  <div className="aspect-ratio--object cover" style={{ backgroundImage: `url(${this.state.src})` }}/>
+                : null
+                }
+                {this.state.visible ?
+                  <div className="dn">
+                    <img
+                      src={this.props.image.src}
+                      srcSet={this.props.image.srcset}
+                      onLoad={event => this.handleOnLoad(event)}
+                      alt={this.props.title}
+                    />
+                  </div>
+                : null
+                }
+              </div>
             </div>
+            <h2
+              className="pa2 ma0 absolute w-100 bottom-0 left-0 z-1 _c-black"
+            >
+              {this.props.title}
+            </h2>
           </a>
         </div>
       </VisibilitySensor>

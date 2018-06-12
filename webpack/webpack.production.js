@@ -1,7 +1,6 @@
 const path = require('path');
 const glob = require('glob');
-const config = require('./config');
-const package = require('../package');
+const config = require('../package');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -12,7 +11,7 @@ const PurifyCSSPlugin = require('purifycss-webpack');
 module.exports = merge(common, {
   plugins: [
     new PurifyCSSPlugin({
-      paths: glob.sync(path.join(__dirname, `..${config.paths.src}**/*.js`)),
+      paths: glob.sync(path.join(__dirname, `..${config.project.paths.src}**/*.js`)),
     })
   ],
   optimization: {
@@ -34,9 +33,9 @@ module.exports = merge(common, {
         prefix: '[hash]',
         favicons: {
           start_url: '/',
-          appName: package.project.name,
-          background: package.project.colors.background,
-          theme_color: package.project.colors.theme,
+          appName: config.project.name,
+          background: config.project.colors.background,
+          theme_color: config.project.colors.theme,
           icons: {
             coast: false,
             yandex: false,

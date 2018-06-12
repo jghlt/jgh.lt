@@ -1,6 +1,5 @@
 const path = require('path');
-const config = require('./config');
-const package = require('../package');
+const config = require('../package');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -13,8 +12,8 @@ module.exports = {
     bundle: './src/index.js'
   },
   output: {
-    publicPath: `${config.paths.public}`,
-    path: path.resolve(__dirname, `..${config.paths.system}`),
+    publicPath: `${config.project.paths.public}`,
+    path: path.resolve(__dirname, `..${config.project.paths.system}`),
     filename: (isDevelopment) ? '[name].js' : '[name].[chunkhash:8].js',
   },
   plugins: [
@@ -32,7 +31,7 @@ module.exports = {
       cache: true,
       filename: '../index.html',
       template: './src/templates/index.html',
-      project: package.project,
+      project: config.project,
       alwaysWriteToDisk: (isDevelopment),
       minify: (isDevelopment) || {
         collapseWhitespace: true

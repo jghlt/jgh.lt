@@ -6,7 +6,7 @@
   "main": "./src/index.js",
   "project": {
     "name": "jghlt",
-    "urls": "https://jgh.lt",
+    "url": "https://jgh.lt",
     "title": "jghlt — Digital design & development — NYC",
     "description": "Digital design & development services for creative agencies, brands & individuals. NYC.",
     "analytics" : "UA-81256649-1",

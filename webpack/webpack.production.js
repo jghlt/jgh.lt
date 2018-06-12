@@ -1,6 +1,7 @@
 const path = require('path');
 const glob = require('glob');
 const config = require('./config');
+const package = require('../package');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
@@ -29,10 +30,20 @@ module.exports = merge(common, {
         }
       }),
       new WebappWebpackPlugin({
-        logo: path.resolve('src/icons/icon-large.png'),
-        prefix: '',
+        logo: path.resolve('src/icons/icon.png'),
+        prefix: '[hash]',
         favicons: {
-          background: '#f6f6f6'
+          start_url: '/',
+          appName: package.project.name,
+          background: package.project.colors.background,
+          theme_color: package.project.colors.theme,
+          icons: {
+            coast: false,
+            yandex: false,
+            android: {
+              background: true
+            }
+          }
         }
       })
     ]

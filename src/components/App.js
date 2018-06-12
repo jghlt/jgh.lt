@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import MediaQuery from 'react-responsive';
 import Breakpoints from './Breakpoints';
 import ScrollSpy from './ScrollSpy';
@@ -7,10 +6,9 @@ import Projects from './Projects';
 import Contact from './Contact';
 
 class App extends React.Component {
-  static propTypes = {
-  }
-
-  state = {
+  constructor() {
+    super();
+    this.state = {};
   }
 
   render() {

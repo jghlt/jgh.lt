@@ -4,18 +4,9 @@ import contactData from '../data/holding';
 import ContactList from './ContactList';
 
 class Holding extends React.Component {
-  static propTypes = {
-  }
-
-  state = {
-  }
-
-  componentDidMount() {
-    console.log('Holding: componentDidMount');
-  }
-
-  componentDidUpdate() {
-    console.log('Holding: componentDidUpdate');
+  constructor() {
+    super();
+    this.state = {};
   }
 
   render() {

@@ -1,5 +1,6 @@
 const path = require('path');
 const config = require('./config');
+const package = require('../package');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
@@ -31,6 +32,7 @@ module.exports = {
       cache: true,
       filename: '../index.html',
       template: './src/templates/index.html',
+      project: package.project,
       alwaysWriteToDisk: (isDevelopment),
       minify: (isDevelopment) || {
         collapseWhitespace: true

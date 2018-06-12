@@ -6,23 +6,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-    <title>jghlt — Digital design & development — NYC</title>
-    <meta name="description" content="">
+    <title><%= htmlWebpackPlugin.options.project.title %></title>
+    <meta name="description" content="<%= htmlWebpackPlugin.options.project.description %>">
 
     <meta property="og:type" content="website"/>
-    <meta property="og:site_name" content=""/>
-    <meta property="og:url" content=""/>
-    <meta property="og:title" content=""/>
+    <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.project.name %>"/>
+    <meta property="og:url" content="<%= htmlWebpackPlugin.options.project.url %>"/>
+    <meta property="og:title" content="<%= htmlWebpackPlugin.options.project.title %>"/>
     <meta property="og:image" content=""/>
-    <meta property="og:description" content=""/>
+    <meta property="og:description" content="<%= htmlWebpackPlugin.options.project.description %>"/>
 
-    <meta name="twitter:site" content="">
-    <meta name="twitter:title" content="">
-    <meta name="twitter:description" content="">
+    <meta name="twitter:site" content="<%= htmlWebpackPlugin.options.project.name %>">
+    <meta name="twitter:title" content="<%= htmlWebpackPlugin.options.project.title %>">
+    <meta name="twitter:description" content="<%= htmlWebpackPlugin.options.project.description %>">
     <meta name="twitter:image" content="">
     <meta name="twitter:card" content="summary_large_image"/>
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "url": "<%= htmlWebpackPlugin.options.project.url %>",
+        "name": "<%= htmlWebpackPlugin.options.project.name %>",
+        "author": {
+          "@type": "Person",
+          "name": "<%= htmlWebpackPlugin.options.project.name %>",
+          "sameAs": [
+            "https://github.com/jghlt",
+            "https://twitter.com/jgh_lt"
+          ]
+        },
+        "description": "<%= htmlWebpackPlugin.options.project.description %>"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
+    <% if (htmlWebpackPlugin.options.project.analytics) { %>
+      <script>
+        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+        ga('create', '<%= htmlWebpackPlugin.options.project.analytics %>', 'auto');
+        ga('send', 'pageview');
+      </script>
+      <script async src='https://www.google-analytics.com/analytics.js'></script>
+    <% } %>
   </body>
 </html>

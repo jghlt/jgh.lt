@@ -9,9 +9,9 @@
     "url": "https://jgh.lt",
     "title": "jghlt — Digital design & development — NYC",
     "description": "Digital design & development services for creative agencies, brands & individuals. NYC.",
-    "analytics" : "UA-81256649-1",
-    "colors" : {
-      "theme" : "#282828",
+    "analytics": "UA-81256649-1",
+    "colors": {
+      "theme": "#282828",
       "background": "#ffffff"
     },
     "paths": {
@@ -57,13 +57,12 @@
     "node-sass": "^4.9.0",
     "optimize-css-assets-webpack-plugin": "^4.0.1",
     "postcss-loader": "^2.1.5",
-    "preload-webpack-plugin": "^2.3.0",
     "purify-css": "^1.2.5",
     "purifycss-webpack": "^0.7.0",
     "sass-loader": "^7.0.1",
     "style-loader": "^0.21.0",
     "url-loader": "^1.0.1",
-    "webapp-webpack-plugin": "^2.1.0",
+    "webapp-webpack-plugin": "^2.2.0",
     "webpack": "^4.8.3",
     "webpack-cli": "^2.1.3",
     "webpack-dev-server": "^3.1.4",

@@ -13,14 +13,25 @@
     <meta property="og:site_name" content="<%= htmlWebpackPlugin.options.project.name %>"/>
     <meta property="og:url" content="<%= htmlWebpackPlugin.options.project.url %>"/>
     <meta property="og:title" content="<%= htmlWebpackPlugin.options.project.title %>"/>
-    <meta property="og:image" content=""/>
+    <meta property="og:image" content="<%= htmlWebpackPlugin.options.project.url %><%=require('../icons/og.png')%>"/>
     <meta property="og:description" content="<%= htmlWebpackPlugin.options.project.description %>"/>
 
     <meta name="twitter:site" content="<%= htmlWebpackPlugin.options.project.name %>">
     <meta name="twitter:title" content="<%= htmlWebpackPlugin.options.project.title %>">
     <meta name="twitter:description" content="<%= htmlWebpackPlugin.options.project.description %>">
-    <meta name="twitter:image" content="">
+    <meta name="twitter:image" content="<%= htmlWebpackPlugin.options.project.url %><%=require('../icons/og.png')%>">
     <meta name="twitter:card" content="summary_large_image"/>
+
+    <% for (var index in htmlWebpackPlugin.files.css) { %>
+    <link rel="preload" href="<%= htmlWebpackPlugin.files.css[index] %>" as="style">
+    <% } %>
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <link rel="preload" href="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" as="script">
+    <% } %>
+
+    <% for (var index in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[index] %>" rel="stylesheet">
+    <% } %>
 
     <script type="application/ld+json">
       {
@@ -39,16 +50,23 @@
         "description": "<%= htmlWebpackPlugin.options.project.description %>"
       }
     </script>
+
   </head>
   <body>
     <div id="root"></div>
-    <% if (htmlWebpackPlugin.options.project.analytics) { %>
-      <script>
-        window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-        ga('create', '<%= htmlWebpackPlugin.options.project.analytics %>', 'auto');
-        ga('send', 'pageview');
-      </script>
-      <script async src='https://www.google-analytics.com/analytics.js'></script>
+
+    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
+    <script async src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
     <% } %>
+
+    <% if (htmlWebpackPlugin.options.project.analytics) { %>
+    <script>
+      window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+      ga('create', '<%= htmlWebpackPlugin.options.project.analytics %>', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script async src="https://www.google-analytics.com/analytics.js" ></script>
+    <% } %>
+
   </body>
 </html>

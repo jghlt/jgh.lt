@@ -31,6 +31,7 @@ module.exports = merge(common, {
       new WebappWebpackPlugin({
         logo: path.resolve('src/icons/icon.png'),
         prefix: '[hash]',
+        inject: 'force',
         favicons: {
           start_url: '/',
           appName: config.project.name,

@@ -31,10 +31,14 @@ module.exports = {
       cache: true,
       filename: '../index.html',
       template: './src/templates/index.html',
+      inject: (isDevelopment),
       project: config.project,
       alwaysWriteToDisk: (isDevelopment),
       minify: (isDevelopment) || {
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        collapseInlineTagWhitespace: false,
+        minifyJS: true,
+        processScripts: ['application/ld+json']
       }
     }),
     new HtmlWebpackHarddiskPlugin(),
@@ -96,6 +100,17 @@ module.exports = {
       },
       {
         test: /\.(svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              publicPath: '/dist'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(png)$/,
         use: [
           {
             loader: 'file-loader',

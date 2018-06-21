@@ -12,8 +12,8 @@ class Holding extends React.Component {
   render() {
     const { title, items, footer } = this.state.data.holding;
     return (
-      <div className="relative w-100">
-        <div className="_u-fullscreen flex">
+      <div className="absolute w-100 h-100 flex">
+        <div className="flex flex-grow-1">
           <div className="flex-grow-1 flex flex-column pa3">
             <h1 className="ma0 _fs-title">
               {title}

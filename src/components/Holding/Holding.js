@@ -1,12 +1,20 @@
 import React from 'react';
-import ContactList from '../Contact/ContactList';
+import data from '../../data';
+import Contact from '../Contact/Contact';
 
-function Holding(props) {
-  return (
-    <div className="relative">
-      <ContactList {...props}/>
-    </div>
-  );
+class Holding extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      data
+    };
+  }
+
+  render() {
+    return (
+      <Contact {...data.holding} />
+    );
+  }
 }
 
 export default Holding;

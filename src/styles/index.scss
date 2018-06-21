@@ -59,6 +59,11 @@ html{
   clip: rect(0, auto, auto, 0);
 }
 
+._u-fullscreen{
+  height:auto;
+  min-height:100vh;
+}
+
 @media screen and (min-width: 30em){
   ._fs-title{
     font-size:4rem;
@@ -67,7 +72,7 @@ html{
 }
 
 @media screen and (min-width: 48em){
-  ._u-fullscreen{
+  ._u-fullscreen-l{
     height:auto;
     min-height:100vh;
   }

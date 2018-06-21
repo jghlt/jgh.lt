@@ -1,6 +1,5 @@
 import React from 'react';
 import data from '../../data';
-import Contact from '../Contact/Contact';
 
 class Holding extends React.Component {
   constructor() {
@@ -11,8 +10,35 @@ class Holding extends React.Component {
   }
 
   render() {
+    const { title, items, footer } = this.state.data.holding;
     return (
-      <Contact {...data.holding} />
+      <div className="relative w-100">
+        <div className="_u-fullscreen flex">
+          <div className="flex-grow-1 flex flex-column pa3">
+            <h1 className="ma0 _fs-title">
+              {title}
+              <br/>
+              ↓
+            </h1>
+            <ul className="list ma0 pl0 pb4">
+              { items.map((item) => {
+                return (
+                  <li key={item.title} className="_fs-title">
+                    <a href={item.link} className="_c-black no-underline hover-moon-gray" target={item.target}>
+                      {item.title}
+                    </a>
+                  </li>
+                );
+              })}
+            </ul>
+            <div className="_mt-auto">
+              <p className="ma0 _fs-title">
+                {footer}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
     );
   }
 }

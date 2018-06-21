@@ -5,7 +5,7 @@ function ProjectsList(props) {
   const { title, items, footer } = props;
   return (
     <div className="relative w-100 z-1">
-      <div className="_u-fullscreen flex">
+      <div className="_u-fullscreen-l flex">
         <div className="flex-grow-1 flex flex-column pa3">
           <h1 className="ma0 _fs-title">
             {title}

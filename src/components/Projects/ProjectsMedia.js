@@ -6,7 +6,7 @@ function ProjectsMedia(props) {
   const { items } = props;
   const title = (props.project && props.project.title) ? props.project.title : false;
   return (
-    <div className="absolute w-100 z-0 _u-fullscreen _u-clipped">
+    <div className="absolute w-100 z-0 _u-fullscreen-l _u-clipped">
       {items.map((project) => {
           return (
             <ProjectsMediaItem

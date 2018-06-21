@@ -4,12 +4,21 @@
   "description": "",
   "private": true,
   "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --progress --config ./webpack/webpack.development.js --mode development",
+    "build": "webpack --progress --config ./webpack/webpack.production.js --mode production",
+    "deploy": "npm run build && rsync -rPz public/ ssh serverpilot@159.89.82.54:apps/jghlt/public/"
+  },
   "project": {
     "name": "jghlt",
     "url": "https://jgh.lt",
     "title": "jghlt — Digital design & development — NYC",
     "description": "Digital design & development services for creative agencies, brands & individuals. NYC.",
-    "analytics": "UA-81256649-1",
+    "google" : {
+      "analytics": false,
+      "verification": false
+    },
     "colors": {
       "theme": "#282828",
       "background": "#ffffff"
@@ -19,12 +28,11 @@
       "public": "/dist/",
       "system": "/public/dist/",
       "proxy": "http://localhost:8080/"
+    },
+    "api": {
+      "development": "http://jgh.lt/",
+      "production": "https://jgh.lt/"
     }
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --progress --config ./webpack/webpack.development.js --mode development",
-    "build": "webpack --progress --config ./webpack/webpack.production.js --mode production"
   },
   "keywords": [],
   "author": "",

@@ -8,6 +8,9 @@ module.exports = merge(common, {
     contentBase: './public',
     historyApiFallback: {
       index: 'index.html'
+    },
+    headers: {
+      'Access-Control-Allow-Origin': '*'
     }
   },
   plugins: [

@@ -22,15 +22,14 @@
     <meta name="twitter:image" content="<%= htmlWebpackPlugin.options.project.url %><%=require('../icons/og.png')%>">
     <meta name="twitter:card" content="summary_large_image"/>
 
-    <% for (var index in htmlWebpackPlugin.files.css) { %>
-    <link rel="preload" href="<%= htmlWebpackPlugin.files.css[index] %>" as="style">
+    <% for (var file in htmlWebpackPlugin.files.css) { %>
+    <link rel="preload" href="<%= htmlWebpackPlugin.files.css[file] %>" as="style">
     <% } %>
-    <% for (var chunk in htmlWebpackPlugin.files.chunks) { %>
-    <link rel="preload" href="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>" as="script">
+    <% for (var file in htmlWebpackPlugin.files.chunks) { %>
+    <link rel="preload" href="<%= htmlWebpackPlugin.files.chunks[file].entry %>" as="script">
     <% } %>
-
-    <% for (var index in htmlWebpackPlugin.files.css) { %>
-    <link href="<%= htmlWebpackPlugin.files.css[index] %>" rel="stylesheet">
+    <% for (var file in htmlWebpackPlugin.files.css) { %>
+    <link href="<%= htmlWebpackPlugin.files.css[file] %>" rel="stylesheet">
     <% } %>
 
     <script type="application/ld+json">
@@ -39,15 +38,10 @@
         "@type": "WebSite",
         "url": "<%= htmlWebpackPlugin.options.project.url %>",
         "name": "<%= htmlWebpackPlugin.options.project.name %>",
-        "author": {
-          "@type": "Person",
-          "name": "<%= htmlWebpackPlugin.options.project.name %>",
-          "sameAs": [
-            "https://github.com/jghlt",
-            "https://twitter.com/jgh_lt"
-          ]
-        },
-        "description": "<%= htmlWebpackPlugin.options.project.description %>"
+        "description": "<%= htmlWebpackPlugin.options.project.description %>",
+        "sameAs": [
+          "https://instagram.com/lastpai.rs"
+        ]
       }
     </script>
 
@@ -59,10 +53,10 @@
     <script async src="<%= htmlWebpackPlugin.files.chunks[chunk].entry %>"></script>
     <% } %>
 
-    <% if (htmlWebpackPlugin.options.project.analytics) { %>
+    <% if (htmlWebpackPlugin.options.project.google.analytics) { %>
     <script>
       window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-      ga('create', '<%= htmlWebpackPlugin.options.project.analytics %>', 'auto');
+      ga('create', '<%= htmlWebpackPlugin.options.project.google.analytics %>', 'auto');
       ga('send', 'pageview');
     </script>
     <script async src="https://www.google-analytics.com/analytics.js" ></script>

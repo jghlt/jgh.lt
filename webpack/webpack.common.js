@@ -29,15 +29,15 @@ module.exports = {
     ),
     new HtmlWebpackPlugin({
       cache: true,
-      filename: '../index.html',
-      template: './src/templates/index.html',
-      inject: (isDevelopment),
+      inject: false,
       project: config.project,
+      filename: '../index.html',
+      template: './assets/templates/index.html',
       alwaysWriteToDisk: (isDevelopment),
       minify: (isDevelopment) || {
+        minifyJS: true,
         collapseWhitespace: true,
         collapseInlineTagWhitespace: false,
-        minifyJS: true,
         processScripts: ['application/ld+json']
       }
     }),
@@ -90,7 +90,7 @@ module.exports = {
             loader: 'advanced-image-loader',
             options: {
               width: 1280,
-              quality: 85,
+              quality: 80,
               srcset: [480, 768, 1024, 1280],
               publicPath: '/dist',
               name: '[name]-[width]-[quality]-[hash]'

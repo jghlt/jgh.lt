@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SmoothScroll from 'smooth-scroll';
 import { debounce, throttle } from 'lodash';
-import { easeOutExpo } from './easings';
+import { easeOutExpo } from '../Easings/Easings';
 
 class ScrollSpy extends React.Component {
   constructor() {

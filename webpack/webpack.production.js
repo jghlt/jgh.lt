@@ -29,7 +29,7 @@ module.exports = merge(common, {
         }
       }),
       new WebappWebpackPlugin({
-        logo: path.resolve('src/icons/icon.png'),
+        logo: path.resolve('assets/icons/icon.png'),
         prefix: '[hash]',
         inject: 'force',
         favicons: {

@@ -18,6 +18,10 @@
   outline: none;
 }
 
+::selection{
+  background: rgba(0, 0, 0, 0.05);
+}
+
 html,
 body{
   font-size:16px;

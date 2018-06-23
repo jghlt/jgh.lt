@@ -1,9 +1,7 @@
 const config = {
   breakpoints: {
-    small: '(max-width: 29.94em)',
-    nsmall: '(min-width: 30em)',
-    medium: '(max-width: 60em) and (min-width: 30em)',
-    large: '(min-width: 60em)'
+    small: '(max-width: 767px)',
+    medium: '(min-width: 768px)'
   },
   palette: {
     black: {

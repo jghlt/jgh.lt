@@ -24,7 +24,7 @@ class App extends React.Component {
           <ThumbnailsList {...data.projects} />
           <Contact {...data.contact} />
         </MediaQuery>
-        <MediaQuery query={breakpoints.nsmall}>
+        <MediaQuery query={breakpoints.medium}>
           <ScrollSpy>
             <Projects {...data.projects} />
             <Contact {...data.contact} />

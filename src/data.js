@@ -30,7 +30,7 @@ const data = {
     items: [
       {
         link: 'http://lastpairs.co/',
-        title: 'lastpai.rs',
+        title: 'lastpairs',
         target: '_blank',
         image: lastpairsImage
       },

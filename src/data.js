@@ -1,7 +1,7 @@
 import lastpairsImage from '../assets/images/lastpairs.jpg';
 import netilspaceImage from '../assets/images/netilspace.jpg';
 import ambagImage from '../assets/images/ambag.jpg';
-import utilssImage from '../assets/images/utilss-01.jpg';
+import utilssImage from '../assets/images/utilss.jpg';
 
 const data = {
   holding: {

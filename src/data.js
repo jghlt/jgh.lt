@@ -35,16 +35,16 @@ const data = {
         image: lastpairsImage
       },
       {
-        link: 'http://netil.space/',
-        title: 'netil.space',
-        target: '_blank',
-        image: netilspaceImage
-      },
-      {
         link: 'http://am-bag.com/',
         title: 'am-bag',
         target: '_blank',
         image: ambagImage
+      },
+      {
+        link: 'http://netil.space/',
+        title: 'netil.space',
+        target: '_blank',
+        image: netilspaceImage
       },
       {
         link: 'http://github.com/jghlt/utilss',

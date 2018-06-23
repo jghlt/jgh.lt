@@ -41,6 +41,10 @@ html{
   color:#282828;
 }
 
+._c-grey{
+  color:#DADEDB;
+}
+
 ._fs-title{
   font-size:32px;
 }
@@ -58,6 +62,12 @@ html{
   border-radius:100%;
   display: block;
   cursor: pointer !important;
+}
+
+._o-action{
+  &:hover{
+    color:#DADEDB;
+  }
 }
 
 ._u-clipped{

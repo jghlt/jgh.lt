@@ -28,7 +28,7 @@ class Cursor extends React.Component {
   }
 
   componentWillUnmount() {
-    document.removeEventListener('mousemove');
+    document.removeEventListener('mousemove', this.handleMouseMove);
   }
 
   setScale = (event) => {

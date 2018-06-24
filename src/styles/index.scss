@@ -14,7 +14,7 @@
 
 // general ...
 *{
-  cursor: url('../../assets/images/cursor.svg') 0 0, default !important;
+  // cursor: url('../../assets/images/cursor.svg') 0 0, default !important;
   outline: none;
 }
 
@@ -87,6 +87,26 @@ html{
     padding-left:6.25%;
     padding-right:6.25%;
   }
+}
+
+._o-cursor{
+  z-index: 100;
+  width: 96px;
+  height: 96px;
+  margin-top: -48px;
+  margin-left: -48px;
+  will-change: transform;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+._o-cursor-dot{
+  z-index: 1;
+  width: 96px;
+  height: 96px;
+  border-radius: 100%;
+  background-color: #00FF28;
+  mix-blend-mode: overlay;
 }
 
 ._u-clipped{

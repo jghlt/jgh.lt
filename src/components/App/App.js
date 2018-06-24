@@ -1,5 +1,6 @@
 import React from 'react';
 import MediaQuery from 'react-responsive';
+import Cursor from '../Cursor/Cursor';
 import ScrollSpy from '../ScrollSpy/ScrollSpy';
 import ThumbnailsList from '../Thumbnails/ThumbnailsList';
 import ThumbnailsGrid from '../Thumbnails/ThumbnailsGrid';
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Contact {...data.contact} />
         </MediaQuery>
         <MediaQuery query={breakpoints.desk}>
+          <Cursor />
           <ScrollSpy>
             <Projects {...data.projects} />
             <Contact {...data.contact} />

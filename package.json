@@ -15,7 +15,7 @@
     "url": "https://jgh.lt",
     "title": "jghlt - Digital design & front end development - NYC",
     "description": "Digital design & front end development. NYC.",
-    "google" : {
+    "google": {
       "analytics": "UA-121248436-1",
       "verification": false
     },
@@ -89,6 +89,7 @@
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
     "react-responsive": "^4.1.0",
+    "react-spring": "^5.3.18",
     "react-visibility-sensor": "^3.11.0",
     "smooth-scroll": "^14.2.0",
     "tachyons": "^4.9.1"

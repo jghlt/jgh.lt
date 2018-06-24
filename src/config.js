@@ -15,6 +15,9 @@ const config = {
     },
     smoke: {
       hex: '#F6F6F6'
+    },
+    lime: {
+      hex: '#00FF28'
     }
   }
 };

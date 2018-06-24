@@ -18,7 +18,7 @@ function ProjectsList(props) {
                 <li key={project.title} className="_fs-title">
                   <a
                     href={project.link}
-                    className="no-underline _c-black _o-action"
+                    className="no-underline hover-moon-gray _c-black"
                     target={project.target}
                     onMouseEnter={() => props.setProject(project.title)}
                     onMouseLeave={() => props.clearProject(project.title)}

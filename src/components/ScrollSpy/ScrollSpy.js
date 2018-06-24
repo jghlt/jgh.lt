@@ -15,14 +15,14 @@ class ScrollSpy extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener('scroll', this.throttleScroll);
-    window.addEventListener('resize', this.debounceResize);
+    window.addEventListener('scroll', _.throttle(this.handleScroll, 160));
+    window.addEventListener('resize', _.debounce(this.handleResize, 240));
     this.update();
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', this.throttleScroll);
-    window.removeEventListener('resize', this.debounceResize);
+    window.removeEventListener('scroll', this.handleScroll);
+    window.removeEventListener('resize', this.handleResize);
   }
 
   setSections = () => {
@@ -91,14 +91,6 @@ class ScrollSpy extends React.Component {
         return easeOutExpo(time, 0, 1, 1);
       }
     });
-  }
-
-  throttleScroll = () => {
-    _.throttle(this.handleScroll, 160);
-  }
-
-  debounceResize = () => {
-    _.debounce(this.handleResize, 240);
   }
 
   handleScroll = () => {

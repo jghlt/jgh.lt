@@ -118,14 +118,14 @@ html{
   min-height:100vh;
 }
 
-@media screen and (min-width: 30em){
+@media screen and (min-width: 481px){
   ._fs-title{
     font-size:4rem;
     font-size:3.88vw;
   }
 }
 
-@media screen and (min-width: 64em){
+@media screen and (min-width: 1025px){
   ._u-fullscreen-l{
     height:auto;
     min-height:100vh;

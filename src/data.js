@@ -51,7 +51,7 @@ const data = {
         title: 'utilss',
         target: '_blank',
         image: utilssImage
-      },
+      }
     ],
     footer: '↓'
   },

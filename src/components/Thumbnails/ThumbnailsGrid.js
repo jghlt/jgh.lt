@@ -1,8 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ThumbnailsListItem from './ThumbnailsListItem';
+import ThumbnailsGridItem from './ThumbnailsGridItem';
 
-function ThumbnailsList(props) {
+const styles = [
+  {
+    paddingRight: '12.5%'
+  },
+  {
+    paddingLeft: '12.5%'
+  },
+  {
+    paddingRight: '12.5%'
+  },
+  {
+    paddingLeft: '6.25%',
+    paddingRight: '6.25%'
+  }
+];
+
+function ThumbnailsGrid(props) {
   const { title, items } = props;
   return (
     <div className="relative w-100">
@@ -14,13 +30,20 @@ function ThumbnailsList(props) {
             ↓
           </h1>
         </div>
-        {items.map(item => <ThumbnailsListItem key={item.title} {...item} />)}
+        <div className="_o-thumbnail-grid">
+          {items.map(item => (
+            <ThumbnailsGridItem
+              key={item.title}
+              {...item}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );
 }
 
-ThumbnailsList.propTypes = {
+ThumbnailsGrid.propTypes = {
   title: PropTypes.string.isRequired,
   items: PropTypes.arrayOf(PropTypes.shape({
     link: PropTypes.string.isRequired,
@@ -32,4 +55,4 @@ ThumbnailsList.propTypes = {
   })).isRequired
 };
 
-export default ThumbnailsList;
+export default ThumbnailsGrid;

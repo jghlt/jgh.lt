@@ -2,6 +2,7 @@ import React from 'react';
 import MediaQuery from 'react-responsive';
 import ScrollSpy from '../ScrollSpy/ScrollSpy';
 import ThumbnailsList from '../Thumbnails/ThumbnailsList';
+import ThumbnailsGrid from '../Thumbnails/ThumbnailsGrid';
 import Projects from '../Projects/Projects';
 import Contact from '../Contact/Contact';
 import config from '../../config';
@@ -25,6 +26,10 @@ class App extends React.Component {
           <Contact {...data.contact} />
         </MediaQuery>
         <MediaQuery query={breakpoints.medium}>
+          <ThumbnailsGrid {...data.projects} />
+          <Contact {...data.contact} />
+        </MediaQuery>
+        <MediaQuery query={breakpoints.desk}>
           <ScrollSpy>
             <Projects {...data.projects} />
             <Contact {...data.contact} />

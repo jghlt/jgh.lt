@@ -1,7 +1,10 @@
 const config = {
   breakpoints: {
     small: '(max-width: 767px)',
-    medium: '(min-width: 768px)'
+    nsmall: '(min-width: 768px)',
+    medium: '(min-width: 768px) and (max-width: 1024px)',
+    ndesk: '(max-width: 1024px)',
+    desk: '(min-width: 1025px)'
   },
   palette: {
     black: {

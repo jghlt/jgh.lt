@@ -43,7 +43,7 @@ class ProjectsMediaItem extends React.Component {
               {this.state.loaded ?
                 <div className="aspect-ratio--object">
                   <div className="aspect-ratio--object bg-near-white"/>
-                  <div className="aspect-ratio--object cover" style={{ backgroundImage: `url(${this.state.src})` }}/>
+                  <div className="aspect-ratio--object cover bg-center" style={{ backgroundImage: `url(${this.state.src})` }}/>
                 </div>
               : null
               }

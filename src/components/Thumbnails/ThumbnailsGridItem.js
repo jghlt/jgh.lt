@@ -49,6 +49,7 @@ class ThumbnailListItem extends React.Component {
     if (visible && !this.state.once) {
       this.setOnce();
       this.setVisible();
+      console.log('called once per component');
     }
   }
 

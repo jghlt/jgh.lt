@@ -3,10 +3,10 @@ const glob = require('glob');
 const config = require('../package');
 const merge = require('webpack-merge');
 const common = require('./webpack.common.js');
+const PurifyCSSPlugin = require('purifycss-webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WebappWebpackPlugin = require('webapp-webpack-plugin');
-const PurifyCSSPlugin = require('purifycss-webpack');
 
 module.exports = merge(common, {
   plugins: [

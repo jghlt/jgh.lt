@@ -1,7 +1,8 @@
+import noelleWolfImage from '../assets/images/noellewolf.jpg';
+import kingAndPartnersImage from '../assets/images/kingandpartners.jpg';
 import lastpairsImage from '../assets/images/lastpairs.jpg';
 import netilspaceImage from '../assets/images/netilspace.jpg';
 import ambagImage from '../assets/images/ambag.jpg';
-import utilssImage from '../assets/images/utilss.jpg';
 
 const data = {
   holding: {
@@ -26,31 +27,37 @@ const data = {
     footer: '↳ NYC'
   },
   projects: {
-    title: 'Digital design & development',
+    title: 'Fullstack Developer',
     items: [
       {
-        link: 'http://lastpairs.co/',
-        title: 'lastpairs',
+        link: 'https://www.noellewolf.com/',
+        title: 'noelle wolf',
         target: '_blank',
-        image: lastpairsImage
+        image: noelleWolfImage
       },
       {
-        link: 'http://am-bag.com/',
-        title: 'am-bag',
+        link: 'https://www.kingandpartners.com/',
+        title: 'king & partners',
         target: '_blank',
-        image: ambagImage
+        image: kingAndPartnersImage
       },
       {
-        link: 'http://netil.space/',
+        link: 'https://netil.space/',
         title: 'netil.space',
         target: '_blank',
         image: netilspaceImage
       },
       {
-        link: 'http://github.com/jghlt/utilss',
-        title: 'utilss',
+        link: 'https://lastpairs.co/',
+        title: 'lastpairs',
         target: '_blank',
-        image: utilssImage
+        image: lastpairsImage
+      },
+      {
+        link: 'https://am-bag.com/',
+        title: 'am-bag',
+        target: '_blank',
+        image: ambagImage
       }
     ],
     footer: '↓'

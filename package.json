@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --config ./webpack/webpack.development.js --mode development",
     "build": "webpack --progress --config ./webpack/webpack.production.js --mode production",
-    "deploy": "npm run build && rsync -rPz public/ ssh serverpilot@159.89.82.54:apps/jghlt/public/"
+    "deploy": "npm run build && rsync -rPz public/ jghlt@web512.webfaction.com:webapps/jghlt/public/"
   },
   "project": {
     "name": "jghlt",

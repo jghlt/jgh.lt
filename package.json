@@ -7,14 +7,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --config ./webpack/webpack.development.js --mode development",
-    "build": "webpack --progress --config ./webpack/webpack.production.js --mode production",
-    "deploy": "npm run build && rsync -rPz public/ jghlt@web512.webfaction.com:webapps/jghlt/public/"
+    "build": "webpack --progress --config ./webpack/webpack.production.js --mode production"
   },
   "project": {
     "name": "jghlt",
     "url": "https://jgh.lt",
-    "title": "jghlt - Digital design & front end development - NYC",
-    "description": "Digital design & front end development. NYC.",
+    "title": "jghlt - Senior Fullstack Developer based in NYC - Working with: React, Vue, Next.js, Nuxt.js, Rails, Wordpress, Shopify",
+    "description": "Senior Fullstack Developer based in NYC. Tech: React, Vue, Next.js, Nuxt.js, Rails, Wordpress, Shopify.",
     "google": {
       "analytics": "UA-121248436-1",
       "verification": false

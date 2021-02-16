@@ -3,11 +3,11 @@
 // fonts ...
 @font-face {
   font-family: 'Favorit Bold';
-  src: url('../../assets/fonts/1469358906/favorit-bold.eot');
-  src: url('../../assets/fonts/1469358906/favorit-bold.eot?#iefix') format('embedded-opentype'),
-       url('../../assets/fonts/1469358906/favorit-bold.woff') format('woff'),
-       url('../../assets/fonts/1469358906/favorit-bold.ttf')  format('truetype'),
-       url('../../assets/fonts/1469358906/favorit-bold.svg#f613b1b4fb9027f17fa2d31bc4d38c5f') format('svg');
+  src: url('../public/fonts/1469358906/favorit-bold.eot');
+  src: url('../public/fonts/1469358906/favorit-bold.eot?#iefix') format('embedded-opentype'),
+       url('../public/fonts/1469358906/favorit-bold.woff') format('woff'),
+       url('../public/fonts/1469358906/favorit-bold.ttf')  format('truetype'),
+       url('../public/fonts/1469358906/favorit-bold.svg#f613b1b4fb9027f17fa2d31bc4d38c5f') format('svg');
   font-style:   normal;
   font-weight:  700;
 }
@@ -47,6 +47,11 @@ html{
 
 ._fs-title{
   font-size:32px;
+}
+
+._fs-title-holding{
+  font-size: 32px;
+  font-size: 8vw;
 }
 ._mt-auto{
   margin-top:auto;
@@ -120,8 +125,12 @@ html{
 
 @media screen and (min-width: 481px){
   ._fs-title{
-    font-size:4rem;
-    font-size:3.88vw;
+    font-size: 4rem;
+    font-size: 3.88vw;
+  }
+  ._fs-title-holding{
+    font-size: 5rem;
+    font-size: 5vw;
   }
 }
 

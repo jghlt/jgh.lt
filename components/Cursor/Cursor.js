@@ -1,5 +1,9 @@
 import React from 'react';
-import { Spring, animated, interpolate } from 'react-spring';
+import {  
+  Spring,
+  animated, 
+  interpolate 
+} from 'react-spring';
 
 class Cursor extends React.Component {
   constructor(props) {

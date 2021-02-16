@@ -12,8 +12,12 @@ function ContactList(props) {
             <br/>
             ↓
           </h1>
-          <ul className="list ma0 pl0 pb4">
-            { items.map((item) => {
+          <div className="_mt-auto">
+            <p className="ma0 _fs-title">
+              {footer.title}
+            </p>
+            <ul className="list ma0 pl0 pb4">
+            { footer.items.map((item) => {
               return (
                 <li key={item.title} className="_fs-title">
                   <a href={item.link} className="_c-black no-underline hover-moon-gray" target={item.target}>
@@ -23,10 +27,6 @@ function ContactList(props) {
               );
             })}
           </ul>
-          <div className="_mt-auto">
-            <p className="ma0 _fs-title">
-              {footer}
-            </p>
           </div>
         </div>
       </div>

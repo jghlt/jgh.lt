@@ -134,6 +134,13 @@ html{
   }
 }
 
+@media screen and (min-width: 767px){
+  ._fs-title-holding{
+    font-size: 5rem;
+    font-size: 5vw;
+  }
+}
+
 @media screen and (min-width: 1025px){
   ._u-fullscreen-l{
     height:auto;

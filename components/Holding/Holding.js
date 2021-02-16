@@ -1,8 +1,8 @@
-import React from 'react';
-import data from '../data';
-import config from '../config';
-import Cursor from '../Cursor/Cursor';
-import MediaQuery from 'react-responsive';
+import React from 'react'
+import data from '../data'
+import config from '../config'
+import dynamic from 'next/dynamic'
+const Cursor = dynamic(() => import('../Cursor/Cursor'))
 
 class Holding extends React.Component {
   constructor() {
@@ -23,9 +23,7 @@ class Holding extends React.Component {
     } = config;
     return (
       <div className="absolute w-100 h-100 flex">
-        <MediaQuery query={breakpoints.desk}>
-          <Cursor/>
-        </MediaQuery>      
+        <Cursor/>
         <div className="flex flex-grow-1">
           <div className="flex-grow-1 flex flex-column pa3">
             <h1 className="ma0 _fs-title-holding">

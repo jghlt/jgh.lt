@@ -9,13 +9,5 @@ module.exports = merge(common, {
     historyApiFallback: {
       index: 'index.html'
     }
-  },
-  plugins: [
-    new BrowserSyncPlugin({
-      host: 'localhost',
-      port: 3000,
-      proxy: `${config.project.paths.proxy}`,
-      files: [`${config.project.paths.system}*`]
-    })
-  ]
+  }
 });

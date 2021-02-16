@@ -7,14 +7,13 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --progress --config ./webpack/webpack.development.js --mode development",
-    "build": "webpack --progress --config ./webpack/webpack.production.js --mode production",
-    "deploy": "npm run build && rsync -rPz public/ jghlt@web512.webfaction.com:webapps/jghlt/public/"
+    "build": "webpack --progress --config ./webpack/webpack.production.js --mode production"
   },
   "project": {
     "name": "jghlt",
     "url": "https://jgh.lt",
-    "title": "jghlt - Digital design & front end development - NYC",
-    "description": "Digital design & front end development. NYC.",
+    "title": "jghlt - Senior Fullstack Developer based in NYC - Working with: React, Vue, Next.js, Nuxt.js, Rails, Wordpress, Shopify",
+    "description": "Senior Fullstack Developer based in NYC. Tech: React, Vue, Next.js, Nuxt.js, Rails, Wordpress, Shopify.",
     "google": {
       "analytics": "UA-121248436-1",
       "verification": false
@@ -72,7 +71,7 @@
     "url-loader": "^1.0.1",
     "webapp-webpack-plugin": "^2.2.0",
     "webpack": "^4.8.3",
-    "webpack-cli": "^2.1.3",
+    "webpack-cli": "^3.3.12",
     "webpack-dev-server": "^3.1.4",
     "webpack-manifest-plugin": "^2.0.2",
     "webpack-merge": "^4.1.2",
@@ -81,10 +80,7 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "lodash": "^4.17.10",
-    "npm": "^6.0.1",
-    "popmotion-pose": "^1.5.0",
     "prop-types": "^15.6.1",
-    "pubsub-js": "^1.5.3",
     "raf": "^3.4.0",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
@@ -92,6 +88,7 @@
     "react-spring": "^5.3.18",
     "react-visibility-sensor": "^3.11.0",
     "smooth-scroll": "^14.2.0",
-    "tachyons": "^4.9.1"
+    "tachyons": "^4.9.1",
+    "uglifyjs-webpack-plugin": "^2.2.0"
   }
 }

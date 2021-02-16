@@ -1,63 +1,47 @@
-import noelleWolfImage from '../assets/images/noellewolf.jpg';
 import kingAndPartnersImage from '../assets/images/kingandpartners.jpg';
-import lastpairsImage from '../assets/images/lastpairs.jpg';
-import netilspaceImage from '../assets/images/netilspace.jpg';
-import ambagImage from '../assets/images/ambag.jpg';
+import carillonMiamiImage from '../assets/images/carillonmiami.jpg';
+import waldhausFlimsImage from '../assets/images/waldhausflims.jpg';
+import hugoMadureiraImge from '../assets/images/hugomadureira.jpg';
+import mattJohnGillImage from '../assets/images/mattjohngill.jpg';
 
 const data = {
   holding: {
-    title: 'Digital design & development',
-    items: [
-      {
-        link: 'mailto:hello@jgh.lt',
-        title: 'hello@jgh.lt',
-        target: '_blank'
-      },
-      {
-        link: 'https://twitter.com/jgh_lt',
-        title: 'twitter',
-        target: '_blank'
-      },
-      {
-        link: 'https://github.com/jghlt',
-        title: 'github',
-        target: '_blank'
-      }
-    ],
+    title: 'Senior Fullstack Developer',
+    items: [],
     footer: '↳ NYC'
   },
   projects: {
     title: 'Fullstack Developer',
     items: [
       {
-        link: 'https://www.noellewolf.com/',
-        title: 'noelle wolf',
-        target: '_blank',
-        image: noelleWolfImage
-      },
-      {
-        link: 'https://www.kingandpartners.com/',
-        title: 'king & partners',
+        link: 'https://www.kingandpartners.com/10/',
+        title: 'KP/10',
         target: '_blank',
         image: kingAndPartnersImage
       },
       {
-        link: 'https://netil.space/',
-        title: 'netil.space',
+        link: 'https://www.carillonhotel.com/en/',
+        title: 'carillon.miami',
         target: '_blank',
-        image: netilspaceImage
+        image: carillonMiamiImage
       },
       {
-        link: 'https://lastpairs.co/',
-        title: 'lastpairs',
+        link: 'https://www.waldhaus-flims.ch/en/',
+        title: 'waldhaus-flims',
         target: '_blank',
-        image: lastpairsImage
+        image: waldhausFlimsImage
       },
       {
-        link: 'https://am-bag.com/',
-        title: 'am-bag',
+        link: 'https://hugomadureira.com/',
+        title: 'h.madureira',
         target: '_blank',
-        image: ambagImage
+        image: hugoMadureiraImge
+      },
+      {
+        link: 'https://mattjohngill.com/',
+        title: 'mj-gill',
+        target: '_blank',
+        image: mattJohnGillImage
       }
     ],
     footer: '↓'
@@ -71,13 +55,13 @@ const data = {
         target: '_blank'
       },
       {
-        link: 'https://twitter.com/jgh_lt',
-        title: 'twitter',
+        link: 'https://github.com/jghlt',
+        title: 'github',
         target: '_blank'
       },
       {
-        link: 'https://github.com/jghlt',
-        title: 'github',
+        link: 'https://twitter.com/jgh_lt',
+        title: 'twitter',
         target: '_blank'
       }
     ],

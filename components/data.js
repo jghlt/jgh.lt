@@ -2,8 +2,8 @@ const data = {
   meta: {
     url: 'https://jgh.lt',
     name: 'jgh.lt',
-    title: 'jghlt - Senior Fullstack Developer based in NYC - Working with: React, Vue, Next.js, Nuxt.js, Rails, Wordpress, Shopify',
-    description: 'Senior Fullstack Developer based in NYC. Tech: React, Vue, Next.js, Nuxt.js, Rails, Wordpress, Shopify'
+    title: 'jghlt - Senior Fullstack Developer - Currently working with: Shopify, React, Vue.js, & Rails at King & Partners in NYC.',
+    description: 'Senior Fullstack Developer - Currently working with: Shopify, React, Vue.js, & Rails at King & Partners in NYC.'
   },
   holding: {
     title: 'Fullstack Developer',

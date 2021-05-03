@@ -6,7 +6,7 @@ const data = {
     description: 'Senior Software Engineer - Currently working with: React, Next.js, Node.js, Shopify Plus & BigCommerce at BORN in NYC.'
   },
   holding: {
-    title: 'Fullstack Developer',
+    title: 'Software Engineer',
     lead: 'Currently working with: React, Next.js, Node.js & Shopify Plus at <a href="https://www.borngroup.com/" class="_c-black no-underline hover-moon-gray" target="_blank">BORN</a> in NYC.',
     leadLinks: 'Currently working with: <a href="https://www.shopify.com/" class="_c-black no-underline hover-moon-gray" target="_blank">Shopify</a>, <a href="https://reactjs.org/" class="_c-black no-underline hover-moon-gray" target="_blank">React</a>, <a href="https://vuejs.org/" class="_c-black no-underline hover-moon-gray" target="_blank">Vue.js</a> & <a href="https://rubyonrails.org/" class="_c-black no-underline hover-moon-gray" target="_blank">Rails</a> at <a href="https://www.kingandpartners.com/" class="_c-black no-underline hover-moon-gray" target="_blank">King & Partners</a> in NYC.',
     tech: [

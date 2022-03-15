@@ -1,0 +1,10 @@
+.next
+package.json
+node_modules
+build
+coverage
+.sewing-kit
+*.svg
+src/types/graphql.ts
+docker/*
+*.liquid

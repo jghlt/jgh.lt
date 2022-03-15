@@ -1,0 +1,145 @@
+@import "~tachyons/css/tachyons.css";
+
+// fonts ...
+@font-face {
+  font-family: "Favorit Bold";
+  src: url("../public/fonts/1469358906/favorit-bold.eot");
+  src: url("../public/fonts/1469358906/favorit-bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../public/fonts/1469358906/favorit-bold.woff") format("woff"),
+    url("../public/fonts/1469358906/favorit-bold.ttf") format("truetype"),
+    url("../public/fonts/1469358906/favorit-bold.svg#f613b1b4fb9027f17fa2d31bc4d38c5f")
+      format("svg");
+  font-style: normal;
+  font-weight: 700;
+}
+
+// general ...
+* {
+  // cursor: url('../../assets/images/cursor.svg') 0 0, default !important;
+  outline: none;
+}
+
+::selection {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+html,
+body {
+  font-size: 16px;
+}
+
+html {
+  font-family: "Favorit Bold", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #ffffff;
+  color: #282828;
+}
+
+// project specific helpers ...
+._c-black {
+  color: #282828;
+}
+
+._c-grey {
+  color: #dadedb;
+}
+
+._fs-title {
+  font-size: 32px;
+}
+
+._fs-title-holding {
+  font-size: 32px;
+  font-size: 8vw;
+}
+._mt-auto {
+  margin-top: auto;
+}
+
+._of-cover {
+  object-fit: cover;
+}
+
+._o-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 100%;
+  display: block;
+  cursor: pointer !important;
+}
+
+._o-action {
+  &:hover {
+    color: #dadedb;
+  }
+}
+
+._o-thumbnail-grid {
+  > div:nth-child(4n + 1) {
+    padding-right: 12.5%;
+  }
+
+  > div:nth-child(4n + 2) {
+    padding-left: 12.5%;
+  }
+
+  > div:nth-child(4n + 3) {
+    padding-right: 12.5%;
+  }
+
+  > div:nth-child(4n + 4) {
+    padding-left: 6.25%;
+    padding-right: 6.25%;
+  }
+}
+
+._o-cursor {
+  z-index: 100;
+  width: 96px;
+  height: 96px;
+  margin-top: -48px;
+  margin-left: -48px;
+  will-change: transform;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+._o-cursor-dot {
+  z-index: 1;
+  width: 96px;
+  height: 96px;
+  border-radius: 100%;
+  background-color: #00ff28;
+  mix-blend-mode: overlay;
+}
+
+._u-clipped {
+  clip: rect(0, auto, auto, 0);
+}
+
+._u-fullscreen {
+  height: auto;
+  min-height: 100vh;
+}
+
+@media screen and (min-width: 481px) {
+  ._fs-title {
+    font-size: 4rem;
+    font-size: 3.88vw;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  ._fs-title-holding {
+    font-size: 5rem;
+    font-size: 5vw;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  ._u-fullscreen-l {
+    height: auto;
+    min-height: 100vh;
+  }
+}

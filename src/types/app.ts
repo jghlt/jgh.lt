@@ -1,7 +1,8 @@
 import { Dispatch } from "react";
 
 export interface IGlobalState {
-  store?: any;
+  state?: any;
+  error?: boolean
 }
 
 export type ActionType = {

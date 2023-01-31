@@ -22,7 +22,10 @@
     "tachyons": "^4.12.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.191",
     "@types/react": "^17.0.40",
+    "@types/react-responsive": "^8.0.5",
+    "@types/smooth-scroll": "^16.1.1",
     "prettier": "^2.5.1",
     "typescript": "^4.6.2",
     "webpack": "^5.70.0"

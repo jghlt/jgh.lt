@@ -4,9 +4,9 @@ import config from "config/config";
 import dynamic from "next/dynamic";
 const Cursor = dynamic(() => import("../Cursor/Cursor"));
 
-class Holding extends React.Component {
-  constructor() {
-    super();
+class Holding extends React.Component<{}, { data: any }> {
+  constructor(props: any) {
+    super(props);
     this.state = {
       data,
     };
@@ -28,7 +28,7 @@ class Holding extends React.Component {
             <div className="_mt-auto">
               <p className="ma0 _fs-title-holding">{footer.title}</p>
               <ul className="list ma0 pl0 pb4">
-                {footer.items.map((item) => {
+                {footer.items.map((item: any) => {
                   return (
                     <li key={item.title} className="_fs-title-holding">
                       <a

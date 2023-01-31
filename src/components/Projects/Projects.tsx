@@ -1,18 +1,19 @@
+// @ts-nocheck
 import React from "react";
 import PropTypes from "prop-types";
 import ProjectsList from "./ProjectsList";
 import ProjectsMedia from "./ProjectsMedia";
 
-class Projects extends React.Component {
-  constructor(props) {
+class Projects extends React.Component<{items: any, title: any, footer: any }, { project: any }> {
+  constructor(props: any) {
     super(props);
     this.state = {
       project: null,
     };
   }
 
-  setProject = (key) => {
-    const project = this.props.items.filter((object) => object.title === key);
+  setProject = (key: any) => {
+    const project = this.props.items.filter((object: any) => object.title === key);
     this.setState(() => {
       return {
         project: project[0] || null,

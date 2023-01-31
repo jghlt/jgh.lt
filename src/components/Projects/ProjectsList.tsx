@@ -1,7 +1,8 @@
+// @ts-nocheck
 import React from "react";
 import PropTypes from "prop-types";
 
-function ProjectsList(props) {
+function ProjectsList(props: any) {
   const { title, items, footer } = props;
   return (
     <div className="relative w-100 z-1">
@@ -12,7 +13,7 @@ function ProjectsList(props) {
             <br />↓
           </h1>
           <ul className="list ma0 pl0 pb4">
-            {items.map((project) => {
+            {items.map((project: any) => {
               return (
                 <li key={project.title} className="_fs-title">
                   <a

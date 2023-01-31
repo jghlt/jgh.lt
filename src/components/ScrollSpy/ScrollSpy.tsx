@@ -1,12 +1,13 @@
+// @ts-nocheck
 import React from "react";
 import PropTypes from "prop-types";
 import SmoothScroll from "smooth-scroll";
 import { debounce, throttle } from "lodash";
 import { easeOutExpo } from "../Easings/Easings";
 
-class ScrollSpy extends React.Component {
-  constructor() {
-    super();
+class ScrollSpy extends React.Component<{}, { sections: any, currentSection: any }> {
+  constructor(props: any) {
+    super(props);
     this.scroll = new SmoothScroll();
     this.state = {
       sections: null,

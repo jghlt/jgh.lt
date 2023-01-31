@@ -1,7 +1,7 @@
 import React from "react";
 import ContactList from "./ContactList";
 
-function Contact(props) {
+function Contact(props: any) {
   return (
     <div className="relative">
       <ContactList {...props} />

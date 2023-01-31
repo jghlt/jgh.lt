@@ -9,9 +9,9 @@ import Contact from "components/Contact";
 import config from "config/config";
 import data from "config/data";
 
-class App extends React.Component {
-  constructor() {
-    super();
+class App extends React.Component<{}, { data: any }> {
+  constructor(props: any) {
+    super(props);
     this.state = {
       data,
     };

@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-function ContactList(props) {
+function ContactList(props: any) {
   const { title, items, footer } = props;
   return (
     <div className="relative w-100">
@@ -14,7 +14,7 @@ function ContactList(props) {
           <div className="_mt-auto">
             <p className="ma0 _fs-title">{footer.title}</p>
             <ul className="list ma0 pl0 pb4">
-              {footer.items.map((item) => {
+              {footer.items.map((item: any) => {
                 return (
                   <li key={item.title} className="_fs-title">
                     <a

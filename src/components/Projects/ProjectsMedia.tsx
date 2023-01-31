@@ -1,8 +1,9 @@
+// @ts-nocheck
 import React from "react";
 import PropTypes from "prop-types";
 import ProjectsMediaItem from "./ProjectsMediaItem";
 
-function ProjectsMedia(props) {
+function ProjectsMedia(props: any) {
   const { items } = props;
   const title =
     props.project && props.project.title ? props.project.title : false;

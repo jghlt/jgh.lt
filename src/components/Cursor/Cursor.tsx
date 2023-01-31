@@ -1,8 +1,8 @@
 import React from "react";
 import { Spring, animated, interpolate } from "react-spring";
 
-class Cursor extends React.Component {
-  constructor(props) {
+class Cursor extends React.Component<{}, { scale: any, mouse: any, transform: any }> {
+  constructor(props: any) {
     super(props);
     this.state = {
       scale: false,
@@ -31,7 +31,7 @@ class Cursor extends React.Component {
     document.removeEventListener("mousemove", this.handleMouseMove);
   }
 
-  setScale = (event) => {
+  setScale = (event: any) => {
     const { target } = event;
     const isLink = target && target.tagName.toLowerCase() === "a";
     if (this.state.scale) {
@@ -52,7 +52,7 @@ class Cursor extends React.Component {
     }
   };
 
-  setTransform = (event) => {
+  setTransform = (event: any) => {
     const mouseClientX = Math.round(event.clientX);
     const mouseClientY = Math.round(event.clientY);
     this.setState(() => {
@@ -75,7 +75,7 @@ class Cursor extends React.Component {
     });
   };
 
-  handleMouseOver = (event) => {
+  handleMouseOver = (event: any) => {
     const { target } = event;
     const isLink = target.tagName.toLowerCase() === "a";
     if (isLink) {
@@ -83,7 +83,7 @@ class Cursor extends React.Component {
     }
   };
 
-  handleMouseMove = (event) => {
+  handleMouseMove = (event: any) => {
     requestAnimationFrame(() => {
       this.setTransform(event);
       this.setScale(event);

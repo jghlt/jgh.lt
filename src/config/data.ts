@@ -3,13 +3,13 @@ const data = {
     url: "https://jgh.lt",
     name: "jgh.lt",
     title:
-      "jghlt - Senior Software Engineer - Currently working with: Typescript, React, Next.js, Node.js & Shopify Plus at Shift Lab in NYC.",
+      "jghlt - Senior Software Engineer - Currently working with: Typescript, React, Next.js, AWS & Shopify Plus at Shift in NYC.",
     description:
-      "James Gavin Holt - Senior Software Engineer - Currently working with: Typescript, React, Next.js, Node.js & Shopify Plus at Shift Lab in NYC.",
+      "James Gavin Holt - Senior Software Engineer - Currently working with: Typescript, React, Next.js, AWS & Shopify Plus at Shift in NYC.",
   },
   holding: {
     title: "Fullstack Developer",
-    lead: 'Currently working with: Typescript, React, Next.js, Node.js & Shopify Plus at <a href="https://shiftlab.co" class="_c-black no-underline hover-moon-gray" target="_blank">Shift Lab</a> in NYC.',
+    lead: 'Currently working with: Typescript, React, Next.js, Node, & AWS at <a href="https://shiftlab.co" class="_c-black no-underline hover-moon-gray" target="_blank">Shift</a> in NYC.',
     footer: {
       title: "↓",
       items: [

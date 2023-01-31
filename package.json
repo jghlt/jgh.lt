@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "lodash": "^4.17.21",
-    "next": "10.0.7",
-    "react": "17.0.1",
+    "next": "12.3.4",
+    "react": "17.0.2",
     "react-client-only": "^1.0.2",
-    "react-dom": "17.0.1",
+    "react-dom": "17.0.2",
     "react-responsive": "^8.2.0",
     "react-spring": "7.0.0",
     "react-visibility-sensor": "^5.1.1",
